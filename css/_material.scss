@@ -3,9 +3,23 @@ outline: -webkit-focus-ring-color auto 0;
 }
 
 body{
-	background-color: $gray012;
-	font-size:16px;
+	background-color: $gray-100;
+	font-size:15px;
 	font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif!important; 
+	
+	a:focus, a:hover{
+		text-decoration:none;
+	}
+}
+
+.styleguide-break{
+	background-color:$orange-400;
+	color:$gray087;
+	padding:$full-padding;
+	
+	span:before{
+		content:"This element does not exist in material design. ";
+	}
 }
 
 .material-depth-1 {
@@ -29,16 +43,6 @@ body{
     width: 100%;
     top: 0;
     z-index: -1;
-}
-
-.material-block {
-    height: 100%;
-	padding: $full-padding;
-    background-color: $white;
-}
-
-.container-block {
-	background-color: $gray-100;
 }
 
 .wfm-block {
@@ -65,11 +69,13 @@ body{
 }
 
 .layout-container .content {
+	@extend .material-depth-1;
 	-webkit-flex: auto;
 	flex: auto;
 	padding: 10px;
 	flex-basis: 70%;
 	margin: 10px;
+	background-color: $white;
 }
 
 // Loading bar

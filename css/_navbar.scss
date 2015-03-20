@@ -8,26 +8,29 @@
 
 // Topbar
 //
-// The topbar is at top of the page, and contains the brand, some breadcrumbs, a global search and some actions. Since the topbar is always imported into the template it should remain as global as possible.
+// The topbar is, as you might have guessed at the top of the page, and contains the brand, the path to the current view, a global search and some actions. Since the same topbar is always imported into every view it should only contain global and unspescific tools and actions.
+//
+//Note: the 'path' should show where the view is in relation to the root, not how the user got to it.
 //
 //Markup:
-//<div class="material-depth-1 navbar navbar-default"> 
-//  <div class="wfm-container">
-//		<div class="navbar-header">
-//			<div class="content">
+//<div class="material-depth-1 navbar navbar-default">
+//		<div class="navbar-header content">
+//			<div class="navbar-left">
 //				<span class="brand">Teleopti WFM</span>
-//				<span class="breadbin">
-//					<a href="#" class="crumb">Settings ></a>
-//					<a href="#" class="crumb">Options</a>
+//				<span class="breadbin hidden-xs">
+//					<a class="crumb">Gotham</a>
+//					<a class="crumb">Batcave</a>
 //				</span>
-//				<div class="right-actions">
-//					<span><a><i class="mdi mdi-account"></i></a></span>
-//					<span><a><i class="mdi mdi-settings"></i></a></span>
-//					<span><a><i class="mdi mdi-logout"></i></a></span>
-//				</div>
+//			</div>
+//			<div class="navbar-right">
+//					<span>
+//						<i class="mdi mdi-magnify"></i>
+//						<input type="text" placeholder="Search ..." class="global-search" />
+//					</span>
+//					<span><a><i class="mdi mdi-account"></i></a>
+//					</span>
 //			</div>
 //		</div>
-//	</div> 
 //</div>
 //
 //Styleguide 1.5.1
@@ -36,6 +39,7 @@
 // Headers
 //
 //The normal header is used to indicate a new area or panel, any headers within that panel will have the second header (however, try to keep the total number of headers within one panel as low as possible).
+//
 //A secondary header should not live within another secondary header, rather, make a new secondary header to make skimming through the panel simple.
 //
 //Markup:
@@ -62,24 +66,27 @@
 // 
 
 .sub-header{
-	@extend .wfm-block;
+	padding: $full-padding;
 	background-color: $blue-300;
 	color: $gray087;
 }
 
 .bottom-header{
-	@extend .wfm-block;
+	padding: $full-padding;
 	background-color: $blue-100;
 	color: $gray087;
 	border-bottom:1px solid $gray012;
 }
 
 .sidenav-header{
-	width: 100%;
-	padding: 10px!important;
+	padding: $full-padding * 2 $full-padding;
 	background-color: $blue-300;
 	color: $gray087;
 	border-bottom:1px solid $gray012;
+}
+
+.toolbar {
+	margin-bottom: $full-padding;
 }
 
 .navbar {
@@ -100,34 +107,41 @@
 	}
 	
 	.content {
-		height: 50px;
+		height: 22px;
 		padding: 15px;
 		font-size: 18px;
 		line-height: 20px;
-		margin-left: -15px;
+		width: 98%;
 	}
 	
 	.wfm-container{
 		padding-left:$full-padding;
 	}
 	
+	.crumb:after{
+		content:" > ";
+	}
+	
 	.breadbin{
 		margin-left:30px;
 		font-size: 75%;
+		
+		a:last-child:after{
+		content:" ";
+		}
 	}
-	
-	.right-actions{
-		position:absolute;
-		right:$full-padding;
-		top:30%;
-	}
-	 .right-actions span{
-		display:inline-block;
-	 }
 	 
-	 .right-actions i{
+	 i{
 		color: $white;
 	 }
+}
+
+.navbar-left {
+	float: left;
+}
+
+.navbar-right {
+	float: right;
 }
 
 /*search*/

@@ -18,28 +18,18 @@
 //
 //
 //Markup:
-//	<div class="input-prepend">
-//		<i class="mdi mdi-magnify"></i>
-//		<input type="text" placeholder="Search ..." />
-//	</div>
+//<div class="input-prepend">
+//	<i class="mdi mdi-filter-outline"></i>
+//	<input type="text" name="filterRole" />
+//</div>
 //
 //Styleguide 1.4.2
 //
 
-// Input with append
-//
-//
-//Markup:
-//	<div class="input-append">
-//		<input type="text" placeholder="Filter ..." />
-//		<i class="mdi mdi-filter"></i>
-//	</div>
-//
-//Styleguide 1.4.3
-//
 
 input{
 	font-size:14px;
+	height: 24px;
 }
 
 input[type='text'], select{
@@ -50,7 +40,7 @@ input[type='text'], select{
 	&:focus {
 		border: none;
 		outline: none;
-		border-bottom: 2px solid $pink-500;
+		border-bottom: 1px solid $pink-500;
 	}
 }
 
@@ -63,23 +53,6 @@ input[type='text'], select{
   input[type='text'] {
     display: inline-block;
     width: 92%;
-	margin: 5px 0;
-	padding: $full-padding $full-padding 2px;
-  }
-}
-
-.input-append {
-  width: 100%;
-  i {
-    display: inline-block;
-    font-weight:600;
-    width: 5%;
-  }
-  input[type='text'] {
-    display: inline-block;
-    width: 92%;
-	margin: 5px 0;
-	padding: $full-padding $full-padding 2px;
   }
 }
 
@@ -98,22 +71,16 @@ input[type='text'], select{
   color: $gray026;
 }
 
+
 // Select
 //
-// TODO
+// The select is used to provide many options to the user.
 //
 //Markup:
 //	<select>
 //		<option>1</option>
 //		<option>2</option>
 //		<option>3</option>
-//		<option>4</option>
-//		<option>5</option>
-//		<option>6</option>
-//		<option>7</option>
-//		<option>8</option>
-//		<option>9</option>
-//		<option>10</option>
 //	</select>
 //
 //Styleguide 1.4.4
@@ -129,24 +96,27 @@ select option{
 //
 //Markup:
 //	<form>
-//		<div class="wfm-radio">
-//        <input type="radio" id="radio1" name="radioName" value="Value1" checked="true"/>
-//			<label for="radio1">
-//		This
-//			</label>
-//		</div>
-//		<div class="wfm-radio">
-//        <input type="radio" id="radio2" name="radioName" value="Value2"/>
-//			<label for="radio2">
-//				That
-//			</label>
-//		</div>
-//		<div class="wfm-radio">
-//        <input type="radio" id="radio3" name="radioName" value="Value3"/>
-//			<label for="radio3">
-//				Those
-//			</label>
-//		</div>
+//	<div class="wfm-radio">
+//		<input type="radio" name="group1" id="radio1" checked="true"/>
+//		<label for="radio1">
+//			<span class="wfm-radio-toggle"></span>
+//			<span class="wfm-radio-label">This</span>
+//		</label>
+//	</div>
+//	<div class="wfm-radio">
+//		<input type="radio" name="group1" id="radio2" />
+//		<label for="radio2">
+//			<span class="wfm-radio-toggle"></span>
+//			<span class="wfm-radio-label">That</span>
+//		</label>
+//	</div>
+//	<div class="wfm-radio">
+//		<input type="radio" name="group1" id="radio3" />
+//		<label for="radio3">
+//			<span class="wfm-radio-toggle"></span>
+//			<span class="wfm-radio-label">These</span>
+//		</label>
+//	</div>
 //	</form>
 //
 //Styleguide 1.4.5
@@ -159,146 +129,152 @@ cursor: pointer;
 		display:none;
 	}
 
-label {
-		width: 18px;
-		height: 18px;
-		border-radius: 4px;
-		text-align: center;
-		margin-left: 23px;
-		white-space:nowrap;
-		transition: $transition-timing;
-	}
-	
-	label:before {
+.wfm-radio-toggle {
+		position: absolute;
 		background-color: $gray-300;
-		content: "";
-		border-radius: 50%;
-		display: block;
 		width: 20px;
 		height: 20px;
-		color: $white;
-		position: absolute;
-	}
-	
-	input[type=radio]:checked ~ label:before {
-		background-color: $blue-300;
-	}
-}
-
-// Sliders
-//
-// The slider is used to toggle between two states (show/hide) and should have a ng-model to be able to use Angulars ng-show or ng-hide (http://goo.gl/M5U1oC)
-//
-//Markup:
-//      <div class="wfm-slider">
-//        <input type="checkbox" id="slide1" />
-//			<label for="slide1">
-//				<span>stuff</span>
-//			</label>
-//      </div>
-//
-//Styleguide 1.4.6
-//
-
-.wfm-slider {
-
-	width: 48px;
-	height: 18px;
-	margin: 5px;
-	position: relative;
-
-	input[type='checkbox'] {
-		display: none;
-	}
-	label {
-		position: absolute;
-		background-color: $gray-300;
-		width: 100%;
-		height: 100%;
 		border-radius: 40px;
 		-webkit-transition: background-color .2s ease-in-out;
 		transition: background-color .2s ease-in-out;
 	}
-	label:after {
-		content: "";
-		display: block;
-		width: 14px;
-		height: 14px;
-		border-radius: 44px;
-		cursor: pointer;
-		position: absolute;
-		top: 2px;
-		z-index: 1;
-		left: 5px;
-		background-color: $white;
-		-webkit-transition: left .2s ease-in-out;
-		transition: left .2s ease-in-out;
-	}
-	input[type=checkbox]:checked ~ label {
+	
+	input[type=radio]:checked ~ label .wfm-radio-toggle{
 		background-color: $blue-300;
 	}
-
-	input[type=checkbox]:checked ~ label:after {
-		left: 30px;
-	}
 	
-	span{
-		/*Slider width + 5px*/
-		margin-left: 53px;
+	.wfm-radio-label{
+		margin-left: 20px + $full-padding;
 		white-space:nowrap;
 	}
 }
 
 // Checkboxes
 //
-// Checkboxes work the same way as radio buttons, except that any number of items can be selected. When faced with a large group of checkboxes, consider having a 'toggle all' option for easy management.
+//Todo
 //
 //Markup:
-//<div class="wfm-checkbox">
-//	<input type="checkbox" id=check1 checked="true"/>
-//	<label for=check1> label </label>
-//</div>
-//<div class="wfm-checkbox">
-//	<input type="checkbox" id=check2 />
-//	<label for=check2> label </label>
-//</div>
+//	<form>
+//	<div class="wfm-checkbox">
+//		<input type="checkbox" id="check1" checked="true"/>
+//		<label for="check1">
+//			<span class="wfm-checkbox-toggle"></span>
+//			<span class="wfm-checkbox-label">Check </span>
+//		</label>
+//	</div>
+//	<div class="wfm-checkbox">
+//		<input type="checkbox" id="check2" />
+//		<label for="check2">
+//			<span class="wfm-checkbox-toggle"></span>
+//			<span class="wfm-checkbox-label">Check </span>
+//		</label>
+//	</div>
+//	<div class="wfm-checkbox">
+//		<input type="checkbox" id="check3" />
+//		<label for="check3">
+//			<span class="wfm-checkbox-toggle"></span>
+//			<span class="wfm-checkbox-label">Got it</span>
+//		</label>
+//	</div>
+//	</form>
+//
+//Styleguide 1.4.6
+//
+
+.wfm-checkbox {
+@extend .wfm-block;
+cursor: pointer;
+
+	input[type='checkbox'] {
+		display:none;
+	}
+
+.wfm-checkbox-toggle:after {
+		position: absolute;
+		background-color: $gray-300;
+		width: 20px;
+		height: 20px;
+		float:right;
+		border-radius:2px;
+		content: " ";
+		-webkit-transition: background-color .2s ease-in-out;
+		transition: background-color .2s ease-in-out;
+		
+	}
+	
+	input[type=checkbox]:checked ~ label .wfm-checkbox-toggle:after{
+		background-color: $blue-300;
+		content: " ✓";
+		text-align: center;
+		color:$white;
+	}
+	
+	.wfm-checkbox-label{
+		margin-left: 20px + $full-padding;
+		white-space:nowrap;
+	}
+}
+
+// Sliders
+//
+// The slider is used to toggle between two states (show/hide) and uses <a href="http://goo.gl/M5U1oC">Angulars ng-show or ng-hide</a> to toggle other elements.
+//
+//Markup:
+//	<div class="wfm-slider">
+//		<input type="checkbox" id="slide1" />
+//		<label for="slide1">
+//			<span class="wfm-slider-label">Show selected items</span>
+//			<span class="wfm-slider-toggle"></span>
+//		</label>
+//	</div>
 //
 //Styleguide 1.4.7
 //
 
-.wfm-checkbox {
-	margin-left: 5px; 
-	@extend .wfm-block;
-	cursor:pointer;
+.wfm-slider {
+	position: relative;
+	height: 24px;
+	padding-top: 2px;
 	
 	input[type='checkbox'] {
-		display:none;
+		display: none;
 	}
 	
-	label {
-		width: 18px;
-		height: 18px;
-		border-radius: 4px;
-		text-align: center;
-		margin-left: 23px;
-		white-space:nowrap;
-		transition: $transition-timing;
-	}
-	
-	label:before {
-		background-color: $gray-300;
-		content: "";
-		border-radius: 2px;
-		display: block;
-		width: 20px;
-		height: 20px;
-		color: $white;
+	.wfm-slider-toggle {
 		position: absolute;
+		background-color: $gray-300;
+		width: 48px;
+		height: 18px;
+		border-radius: 40px;
+		-webkit-transition: background-color .2s ease-in-out;
+		transition: background-color .2s ease-in-out;
+		margin: 2px 5px;
+	}
+	.wfm-slider-toggle:after {
+		content: "";
+		display: block;
+		width: 12px;
+		height: 12px;
+		border-radius: 44px;
+		cursor: pointer;
+		position: absolute;
+		top: 3px;
+		z-index: 1;
+		left: 5px;
+		background-color: $white;
+		-webkit-transition: left .2s ease-in-out;
+		transition: left .2s ease-in-out;
+	}
+	input[type=checkbox]:checked ~ label .wfm-slider-toggle{
+		background-color: $blue-300;
+	}
+
+	input[type=checkbox]:checked ~ label .wfm-slider-toggle:after {
+		left: 30px;
 	}
 	
-	input[type=checkbox]:checked ~ label:before {
-		background-color: $blue-300;
-		content: "✓";
+	.wfm-slider-label{
+		white-space:nowrap;
 	}
 }
 
