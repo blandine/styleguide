@@ -89,7 +89,7 @@ body {
   top: 0;
   z-index: -1; }
 
-.wfm-block, .tile-footer, .angular-ui-tree-handle, select option, .wfm-radio, .wfm-checkbox, .inner i, .tab-group .tab-container {
+.wfm-block, .angular-ui-tree-handle, select option, .wfm-radio, .wfm-checkbox, .inner i, .tab-group .tab-container {
   padding: 5px;
   width: 100%; }
 
@@ -124,40 +124,26 @@ body {
   max-width: 100%;
   border-radius: 0 !important; }
 
-.help-text {
-  background-color: #ffffff;
-  text-align: center;
-  padding: 5px; }
-
-.help-widget {
-  position: absolute;
-  bottom: 0; }
-
-.tile-footer {
-  background-color: #ffffff;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
-  text-align: right; }
-
 .tree {
   max-height: 800px;
   overflow-y: auto;
-  background-color: #f5f5f5;
+  background-color: rgba(0, 0, 0, 0.06);
   vertical-align: middle; }
   .tree ol {
     list-style: none; }
   .tree li {
     border-top: 1px solid rgba(0, 0, 0, 0.06); }
 
-.angular-ui-tree-handle.selected:after {
+.angular-ui-tree-handle span {
+  opacity: 0;
   float: right;
-  height: 25px;
-  width: 25px;
+  text-align: center; }
+
+.angular-ui-tree-handle.selected span {
+  opacity: 1;
+  float: right;
   text-align: center;
-  color: rgba(0, 0, 0, 0.87);
-  margin-top: -2px;
-  padding-top: 2px;
-  content: "✓";
-  transform: scale(1, 1); }
+  color: rgba(0, 0, 0, 0.87); }
 
 .angular-ui-tree-handle {
   cursor: pointer;
@@ -897,7 +883,7 @@ tr {
   padding: 5px;
   cursor: pointer;
   margin: 5px;
-  color: #111111; }
+  color: rgba(0, 0, 0, 0.87); }
   .notice.default {
     background-color: #99d6ff; }
   .notice.warning {
@@ -944,6 +930,7 @@ tr {
     box-shadow: -2px 2px 5px 0 rgba(0, 0, 0, 0.26); }
 
 .layout-container .sidenav {
+  position: relative;
   background-color: #ffffff;
   -webkit-flex: auto;
   flex: auto;
@@ -966,5 +953,9 @@ tr {
   color: rgba(0, 0, 0, 0.87); }
 
 .help-widget {
+  width: 100%;
   position: absolute;
   bottom: 0; }
+
+.tile-footer {
+  text-align: right; }

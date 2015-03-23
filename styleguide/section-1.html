@@ -216,7 +216,7 @@
 <div class="spacer material-depth-1"> Layer 1 </div>
 <div class="spacer material-depth-2"> Layer 2 </div>
 <div class="spacer material-depth-1">
-<p class="material-depth-2"> Stacked </p>
+<p class="spacer material-depth-2"> Stacked </p>
 </div>
         </div>
       </div>
@@ -226,7 +226,7 @@
 &lt;div class=&quot;spacer material-depth-1&quot;&gt; Layer 1 &lt;/div&gt;
 &lt;div class=&quot;spacer material-depth-2&quot;&gt; Layer 2 &lt;/div&gt;
 &lt;div class=&quot;spacer material-depth-1&quot;&gt;
-&lt;p class=&quot;material-depth-2&quot;&gt; Stacked &lt;/p&gt;
+&lt;p class=&quot;spacer material-depth-2&quot;&gt; Stacked &lt;/p&gt;
 &lt;/div&gt;</code></pre>
       </div>
 
@@ -378,13 +378,15 @@
           Example
         </div>
         <div class="kss-modifier__example">
-          <div class="angular-ui-tree">
+          <div class="tree">
+<div class="angular-ui-tree">
 <ol id="tree-root" class="tree-line angular-ui-tree-nodes">
 	<li class="angular-ui-tree-node">
 		<div class="tree-toggle-group">
 			<div class="toggle-handle open"><i class="mdi mdi-chevron-right"></i></div>
 			<div class="angular-ui-tree-handle selected">
 				Super parent
+				<span><i class="mdi mdi-check"></i></span>
 			</div>
 		</div>
 		<ol class="angular-ui-tree-nodes">
@@ -393,6 +395,7 @@
 					<div class="toggle-handle open"><i class="mdi mdi-chevron-right"></i></div>
 					<div class="angular-ui-tree-handle">
 						Parent
+						<span><i class="mdi mdi-check"></i></span>
 					</div>
 				</div>
 				<ol class="angular-ui-tree-nodes">
@@ -401,6 +404,7 @@
 							<div class="toggle-handle"></i></div>
 							<div class="angular-ui-tree-handle selected">
 								Child
+								<span><i class="mdi mdi-check"></i></span>
 							</div>
 						</div>
 					</li>
@@ -413,6 +417,7 @@
 					<div class="toggle-handle open"><i class="mdi mdi-chevron-right"></i></div>
 					<div class="angular-ui-tree-handle">
 						Parent
+						<span><i class="mdi mdi-check"></i></span>
 					</div>
 				</div>
 				<ol class="angular-ui-tree-nodes">
@@ -421,6 +426,7 @@
 							<div class="toggle-handle"></i></div>
 							<div class="angular-ui-tree-handle">
 								Child
+								<span><i class="mdi mdi-check"></i></span>
 							</div>
 						</div>
 					</li>
@@ -430,17 +436,20 @@
 	</li>
 </ol>
 </div>
+</div>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;angular-ui-tree&quot;&gt;
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;tree&quot;&gt;
+&lt;div class=&quot;angular-ui-tree&quot;&gt;
 &lt;ol id=&quot;tree-root&quot; class=&quot;tree-line angular-ui-tree-nodes&quot;&gt;
 	&lt;li class=&quot;angular-ui-tree-node&quot;&gt;
 		&lt;div class=&quot;tree-toggle-group&quot;&gt;
 			&lt;div class=&quot;toggle-handle open&quot;&gt;&lt;i class=&quot;mdi mdi-chevron-right&quot;&gt;&lt;/i&gt;&lt;/div&gt;
 			&lt;div class=&quot;angular-ui-tree-handle selected&quot;&gt;
 				Super parent
+				&lt;span&gt;&lt;i class=&quot;mdi mdi-check&quot;&gt;&lt;/i&gt;&lt;/span&gt;
 			&lt;/div&gt;
 		&lt;/div&gt;
 		&lt;ol class=&quot;angular-ui-tree-nodes&quot;&gt;
@@ -449,6 +458,7 @@
 					&lt;div class=&quot;toggle-handle open&quot;&gt;&lt;i class=&quot;mdi mdi-chevron-right&quot;&gt;&lt;/i&gt;&lt;/div&gt;
 					&lt;div class=&quot;angular-ui-tree-handle&quot;&gt;
 						Parent
+						&lt;span&gt;&lt;i class=&quot;mdi mdi-check&quot;&gt;&lt;/i&gt;&lt;/span&gt;
 					&lt;/div&gt;
 				&lt;/div&gt;
 				&lt;ol class=&quot;angular-ui-tree-nodes&quot;&gt;
@@ -457,6 +467,7 @@
 							&lt;div class=&quot;toggle-handle&quot;&gt;&lt;/i&gt;&lt;/div&gt;
 							&lt;div class=&quot;angular-ui-tree-handle selected&quot;&gt;
 								Child
+								&lt;span&gt;&lt;i class=&quot;mdi mdi-check&quot;&gt;&lt;/i&gt;&lt;/span&gt;
 							&lt;/div&gt;
 						&lt;/div&gt;
 					&lt;/li&gt;
@@ -469,6 +480,7 @@
 					&lt;div class=&quot;toggle-handle open&quot;&gt;&lt;i class=&quot;mdi mdi-chevron-right&quot;&gt;&lt;/i&gt;&lt;/div&gt;
 					&lt;div class=&quot;angular-ui-tree-handle&quot;&gt;
 						Parent
+						&lt;span&gt;&lt;i class=&quot;mdi mdi-check&quot;&gt;&lt;/i&gt;&lt;/span&gt;
 					&lt;/div&gt;
 				&lt;/div&gt;
 				&lt;ol class=&quot;angular-ui-tree-nodes&quot;&gt;
@@ -477,6 +489,7 @@
 							&lt;div class=&quot;toggle-handle&quot;&gt;&lt;/i&gt;&lt;/div&gt;
 							&lt;div class=&quot;angular-ui-tree-handle&quot;&gt;
 								Child
+								&lt;span&gt;&lt;i class=&quot;mdi mdi-check&quot;&gt;&lt;/i&gt;&lt;/span&gt;
 							&lt;/div&gt;
 						&lt;/div&gt;
 					&lt;/li&gt;
@@ -485,6 +498,7 @@
 		&lt;/ol&gt;
 	&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
 &lt;/div&gt;</code></pre>
       </div>
 
@@ -901,12 +915,11 @@
 			</span>
 		</div>
 		<div class="navbar-right">
-				<span>
-					<i class="mdi mdi-magnify"></i>
-					<input type="text" placeholder="Search ..." class="global-search" />
-				</span>
-				<span><a><i class="mdi mdi-account"></i></a>
-				</span>
+			<span>
+				<i class="mdi mdi-magnify"></i>
+				<input type="text" placeholder="Search ..." class="global-search" />
+			</span>
+			<span><a><i class="mdi mdi-account"></i></a></span>
 		</div>
 	</div>
 </div>
@@ -924,12 +937,11 @@
 			&lt;/span&gt;
 		&lt;/div&gt;
 		&lt;div class=&quot;navbar-right&quot;&gt;
-				&lt;span&gt;
-					&lt;i class=&quot;mdi mdi-magnify&quot;&gt;&lt;/i&gt;
-					&lt;input type=&quot;text&quot; placeholder=&quot;Search ...&quot; class=&quot;global-search&quot; /&gt;
-				&lt;/span&gt;
-				&lt;span&gt;&lt;a&gt;&lt;i class=&quot;mdi mdi-account&quot;&gt;&lt;/i&gt;&lt;/a&gt;
-				&lt;/span&gt;
+			&lt;span&gt;
+				&lt;i class=&quot;mdi mdi-magnify&quot;&gt;&lt;/i&gt;
+				&lt;input type=&quot;text&quot; placeholder=&quot;Search ...&quot; class=&quot;global-search&quot; /&gt;
+			&lt;/span&gt;
+			&lt;span&gt;&lt;a&gt;&lt;i class=&quot;mdi mdi-account&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/span&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
 &lt;/div&gt;</code></pre>
