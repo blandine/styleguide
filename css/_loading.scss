@@ -1,0 +1,34 @@
+//Loading
+//
+// When operations take time we display a loading bar or loader to indicate to the user that we are still running.
+//
+//Styleguide 1.9
+//
+
+//Progress bar
+//
+//The loading bar is displayed at the top of the ui-view. If the process can be estimated or calculated we show the linear bar. Otherwise we use an indeterminite bar.
+//
+//Markup:
+//<md-progress-linear md-mode="buffer" value="45" md-buffer-value="100"></md-progress-linear>
+//<div class="wfm-block material-depth-1"> 45%</div>
+//</br>
+//<md-progress-linear md-mode="indeterminate"></md-progress-linear>
+//<div class="wfm-block material-depth-1"> Loading...</div>
+//
+//Styleguide 1.9.1
+//
+
+md-progress-linear.md-default-theme .md-bar {
+	background-color:$blue-300!important;
+}
+
+//Spinner
+//
+//The spinner is used to indicate automatic loading in tables, lists and views.
+//
+//Markup:
+//<md-progress-circular md-mode="indeterminate"></md-progress-circular>
+//
+//Styleguide 1.9.2
+//

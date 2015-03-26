@@ -135,15 +135,15 @@ body {
     border-top: 1px solid rgba(0, 0, 0, 0.06); }
 
 .angular-ui-tree-handle span {
-  opacity: 0;
-  float: right;
-  text-align: center; }
-
-.angular-ui-tree-handle.selected span {
   opacity: 1;
   float: right;
   text-align: center;
   color: rgba(0, 0, 0, 0.87); }
+  .angular-ui-tree-handle span i {
+    opacity: 0; }
+
+.angular-ui-tree-handle.selected span i {
+  opacity: 1; }
 
 .angular-ui-tree-handle {
   cursor: pointer;
@@ -229,164 +229,9 @@ body {
   .wfm-leave-behind p {
     padding-left: 5px;
     margin: 0 5px; }
-  .wfm-leave-behind:before {
-    color: #99d6ff;
-    content: "<";
-    width: 5px;
-    height: 10px;
-    margin-left: -22px;
-    position: absolute;
-    padding: 0 5px; }
 
 .wfm-list li:hover > .wfm-leave-behind {
   width: 110px; }
-
-@-webkit-keyframes tooltipBackgroundShow {
-  0% {
-    -webkit-transform: scale(0.2);
-    transform: scale(0.2);
-    opacity: 0.25; }
-
-  50% {
-    opacity: 1; }
-
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    opacity: 1; } }
-
-@keyframes tooltipBackgroundShow {
-  0% {
-    -webkit-transform: scale(0.2);
-    transform: scale(0.2);
-    opacity: 0.25; }
-
-  50% {
-    opacity: 1; }
-
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    opacity: 1; } }
-
-@-webkit-keyframes tooltipBackgroundHide {
-  0% {
-    opacity: 1; }
-
-  100% {
-    opacity: 0; } }
-
-@keyframes tooltipBackgroundHide {
-  0% {
-    opacity: 1; }
-
-  100% {
-    opacity: 0; } }
-
-md-tooltip {
-  position: absolute;
-  font-size: 14px;
-  z-index: 999;
-  overflow: hidden;
-  pointer-events: none;
-  border-radius: 4px;
-  /**
-   * Depending on the tooltip's size as a multiple of 32 (set by JS),
-   * change the background's animation duration.
-   * The larger the tooltip, the less time the background should take to ripple outwards.
-   */ }
-
-md-tooltip[md-direction="bottom"] {
-  -webkit-transform: translate3d(0, -30%, 0);
-  transform: translate3d(0, -30%, 0);
-  margin-top: 8px; }
-
-md-tooltip[md-direction="top"] {
-  -webkit-transform: translate3d(0, 30%, 0);
-  transform: translate3d(0, 30%, 0);
-  margin-bottom: 8px; }
-
-md-tooltip .md-background {
-  background: rgba(0, 0, 0, 0.87);
-  position: absolute;
-  left: 50%;
-  width: 256px;
-  height: 256px;
-  margin-left: -128px;
-  margin-top: -128px;
-  border-radius: 256px;
-  opacity: 0.25;
-  -webkit-transform: scale(0.2);
-  transform: scale(0.2); }
-
-md-tooltip .md-content {
-  max-width: 240px;
-  white-space: nowrap;
-  overflow: hidden;
-  color: white;
-  text-overflow: ellipsis;
-  padding: 8px;
-  background: transparent;
-  opacity: 0.3;
-  transition: inherit; }
-
-md-tooltip.md-hide {
-  transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2); }
-
-md-tooltip.md-show {
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  pointer-events: auto;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0); }
-
-md-tooltip.md-show .md-background {
-  -webkit-transform: scale(1);
-  transform: scale(1);
-  opacity: 1;
-  -webkit-animation: tooltipBackgroundShow linear;
-  animation: tooltipBackgroundShow linear; }
-
-md-tooltip.md-show .md-content {
-  opacity: 0.99; }
-
-md-tooltip.md-hide .md-background {
-  -webkit-transform: scale(1);
-  transform: scale(1);
-  opacity: 0;
-  -webkit-animation: tooltipBackgroundHide 0.2s linear;
-  animation: tooltipBackgroundHide 0.2s linear; }
-
-md-tooltip[width-32="1"].md-show .md-background {
-  -webkit-animation-duration: 90ms;
-  animation-duration: 90ms; }
-
-md-tooltip[width-32="2"].md-show .md-background {
-  -webkit-animation-duration: 80ms;
-  animation-duration: 80ms; }
-
-md-tooltip[width-32="3"].md-show .md-background {
-  -webkit-animation-duration: 70ms;
-  animation-duration: 70ms; }
-
-md-tooltip[width-32="4"].md-show .md-background {
-  -webkit-animation-duration: 60ms;
-  animation-duration: 60ms; }
-
-md-tooltip[width-32="5"].md-show .md-background {
-  -webkit-animation-duration: 50ms;
-  animation-duration: 50ms; }
-
-md-tooltip[width-32="6"].md-show .md-background {
-  -webkit-animation-duration: 40ms;
-  animation-duration: 40ms; }
-
-md-tooltip[width-32="7"].md-show .md-background {
-  -webkit-animation-duration: 30ms;
-  animation-duration: 30ms; }
-
-md-tooltip[width-32="8"].md-show .md-background {
-  -webkit-animation-duration: 20ms;
-  animation-duration: 20ms; }
 
 input {
   font-size: 14px;
@@ -542,7 +387,8 @@ input[type='text'], select {
     padding: 15px;
     font-size: 18px;
     line-height: 20px;
-    width: 98%; }
+    width: 98%;
+    box-sizing: content-box !important; }
   .navbar .wfm-container {
     padding-left: 5px; }
   .navbar .crumb:after {
@@ -648,7 +494,7 @@ input[type='text'], select {
 
 .wfm-btn-primary-disabled {
   color: rgba(0, 0, 0, 0.26);
-  background-color: #ee8f7d; }
+  background-color: #f5f5f5; }
   .wfm-btn-primary-disabled:hover {
     cursor: not-allowed; }
 
@@ -959,3 +805,6 @@ tr {
 
 .tile-footer {
   text-align: right; }
+
+md-progress-linear.md-default-theme .md-bar {
+  background-color: #66c2ff !important; }
