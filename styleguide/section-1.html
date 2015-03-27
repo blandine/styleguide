@@ -1510,46 +1510,50 @@ There are several different markers to make the type of notice easy to spot:</p>
         </div>
         <div class="kss-modifier__example">
           <div class="modal-box">
-<a href="#openModal1" class="wfm-btn wfm-btn-primary">Open</a>
-<div id="openModal1" class="modalbg">
-<div class="dialog">
- 	<div class="modal-header">
-		Modal title
+	<button ng-click="modalLaunch1 = !modalLaunch1" class="wfm-btn wfm-btn-primary">Open</button>
+	<div ng-cloak ng-show="modalLaunch1">
+		<div class="modalbg">
+			<div class="dialog">
+				<div class="modal-header">
+					Modal title
+				</div>
+				<div class="modal-body">
+					Ladies and gentlemen, allow me to introduce myself, I am the amazing modal window body!
+				</div>
+				<div class="modal-footer">
+					<aside>
+						<a ng-click="modalLaunch1 = !modalLaunch1" class="wfm-btn wfm-btn-invis-primary">DISMISS</a>
+						<a class="wfm-btn wfm-btn-invis-primary">AGREE</a>
+					</aside>
+				</div>
+			</div>
+		</div>
 	</div>
-	<div class="modal-content">
-		Ladies and gentlemen, allow me to introduce myself, I am the amazing modal window body!
-	</div>
-	<div class="modal-footer">
-		<aside>
-			<a href="#close1" title="Close1" class="dismiss wfm-btn wfm-btn-invis-primary">DISMISS</a>
-			<a href="#close2" title="Close2" class="dismiss wfm-btn wfm-btn-invis-primary">AGREE</a>
-		</aside>
-	</div>
-</div>
-</div>
 </div>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
         <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;modal-box&quot;&gt;
-&lt;a href=&quot;#openModal1&quot; class=&quot;wfm-btn wfm-btn-primary&quot;&gt;Open&lt;/a&gt;
-&lt;div id=&quot;openModal1&quot; class=&quot;modalbg&quot;&gt;
-&lt;div class=&quot;dialog&quot;&gt;
- 	&lt;div class=&quot;modal-header&quot;&gt;
-		Modal title
+	&lt;button ng-click=&quot;modalLaunch1 = !modalLaunch1&quot; class=&quot;wfm-btn wfm-btn-primary&quot;&gt;Open&lt;/button&gt;
+	&lt;div ng-cloak ng-show=&quot;modalLaunch1&quot;&gt;
+		&lt;div class=&quot;modalbg&quot;&gt;
+			&lt;div class=&quot;dialog&quot;&gt;
+				&lt;div class=&quot;modal-header&quot;&gt;
+					Modal title
+				&lt;/div&gt;
+				&lt;div class=&quot;modal-body&quot;&gt;
+					Ladies and gentlemen, allow me to introduce myself, I am the amazing modal window body!
+				&lt;/div&gt;
+				&lt;div class=&quot;modal-footer&quot;&gt;
+					&lt;aside&gt;
+						&lt;a ng-click=&quot;modalLaunch1 = !modalLaunch1&quot; class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;DISMISS&lt;/a&gt;
+						&lt;a class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;AGREE&lt;/a&gt;
+					&lt;/aside&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
 	&lt;/div&gt;
-	&lt;div class=&quot;modal-content&quot;&gt;
-		Ladies and gentlemen, allow me to introduce myself, I am the amazing modal window body!
-	&lt;/div&gt;
-	&lt;div class=&quot;modal-footer&quot;&gt;
-		&lt;aside&gt;
-			&lt;a href=&quot;#close1&quot; title=&quot;Close1&quot; class=&quot;dismiss wfm-btn wfm-btn-invis-primary&quot;&gt;DISMISS&lt;/a&gt;
-			&lt;a href=&quot;#close2&quot; title=&quot;Close2&quot; class=&quot;dismiss wfm-btn wfm-btn-invis-primary&quot;&gt;AGREE&lt;/a&gt;
-		&lt;/aside&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;/div&gt;</code></pre>
       </div>
 

@@ -587,23 +587,22 @@ tr {
   right: 0;
   bottom: 0;
   left: 0;
-  background: transparent;
-  z-index: 99999;
-  transition: all 0.1s ease-in-out;
-  display: block;
-  pointer-events: none; }
+  z-index: 99998;
+  background: rgba(0, 0, 0, 0.26);
+  transition: all 0.5s ease-in-out; }
 .modal-box .modalbg .dialog {
-  width: 30%;
+  width: 60%;
+  z-index: 99999;
   position: relative;
-  top: -1000px;
+  top: -20px;
   margin: 10% auto;
   background: #ffffff; }
 .modal-box .modal-header {
   padding: 5px;
   background-color: #0099FF;
   color: #ffffff; }
-.modal-box .modal-content {
-  padding: 5px;
+.modal-box .modal-body {
+  padding: 10px;
   background-color: #ffffff;
   color: rgba(0, 0, 0, 0.87); }
 .modal-box .modal-footer {
@@ -612,15 +611,6 @@ tr {
   color: rgba(0, 0, 0, 0.87); }
 .modal-box aside {
   text-align: right; }
-.modal-box .modalbg:target {
-  display: block;
-  pointer-events: auto;
-  background: rgba(0, 0, 0, 0.26);
-  transition: all 0.5s ease-in-out; }
-.modal-box .modalbg:target .dialog {
-  top: -20px;
-  transition: all 0.5s ease-in-out;
-  -transition-delay: 0.4s; }
 
 .wfm-accordion {
   width: 100%; }
