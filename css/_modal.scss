@@ -4,7 +4,7 @@
 //
 //Markup:
 //	<div class="modal-box">
-//		<button ng-click="modalLaunch1 = !modalLaunch1" class="wfm-btn wfm-btn-primary">Open</button>
+//		<button ng-click="modalLaunch1 = !modalLaunch1" class="wfm-btn wfm-btn-default">Open</button>
 //		<div ng-cloak ng-show="modalLaunch1">
 //			<div class="modalbg">
 //				<div class="dialog">
@@ -37,7 +37,6 @@
 		left: 0;
 		z-index: 99998;
 		background: $gray026;
-		transition: $transition-timing;
 	}
 	
 	.modalbg .dialog {
