@@ -38,6 +38,35 @@
 .swatch-list li {
   cursor: pointer; }
 
+.wfm-datepicker-wrap {
+  margin: 5px;
+  display: inline-block;
+  min-height: 290px; }
+
+.wfm-datepicker table th {
+  border-color: transparent; }
+.wfm-datepicker .btn-default {
+  border-color: transparent !important; }
+.wfm-datepicker .btn-info.active {
+  background-color: cornflowerblue !important;
+  border: none; }
+.wfm-datepicker tbody > tr > td.text-center.h6 {
+  opacity: 0.4; }
+.wfm-datepicker .btn {
+  border-radius: 0;
+  outline: none !important; }
+.wfm-datepicker .btn.active, .wfm-datepicker .btn:active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none; }
+.wfm-datepicker .btn-info {
+  color: black;
+  background-color: transparent;
+  border-color: transparent; }
+.wfm-datepicker .text-info {
+  color: inherit; }
+
 h1 {
   font-size: 36px; }
 
