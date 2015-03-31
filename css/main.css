@@ -38,6 +38,7 @@
 .swatch-list li {
   cursor: pointer; }
 
+/*Overrides bootstrap*/
 .wfm-datepicker-wrap {
   margin: 5px;
   display: inline-block;
@@ -48,8 +49,9 @@
 .wfm-datepicker .btn-default {
   border-color: transparent !important; }
 .wfm-datepicker .btn-info.active {
-  background-color: cornflowerblue !important;
-  border: none; }
+  background-color: #99d6ff !important;
+  border: none;
+  color: #ffffff; }
 .wfm-datepicker tbody > tr > td.text-center.h6 {
   opacity: 0.4; }
 .wfm-datepicker .btn {
@@ -103,7 +105,7 @@ body {
   .styleguide-break span:before {
     content: "This element does not exist in material design. "; }
 
-.material-depth-1, .layout-container .content, .wfm-btn-default, .wfm-btn-primary, .wfm-fab, .dropdown .inner ul, .sidenav-toggle .sidenav-wrapper {
+.material-depth-1, .wfm-datepicker-wrap, .layout-container .content, .wfm-btn-default, .wfm-btn-primary, .wfm-fab, .dropdown .inner ul, .sidenav-toggle .sidenav-wrapper {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); }
 
 .material-depth-2, .wfm-btn-default:hover, .wfm-btn-primary:hover, .wfm-fab:hover {
@@ -633,8 +635,7 @@ tr {
   padding: 5px;
   background-color: #0099FF;
   color: #ffffff; }
-.modal-box .modal-body {
-  padding: 10px;
+.modal-box .modal-inner-content {
   background-color: #ffffff;
   color: rgba(0, 0, 0, 0.87); }
 .modal-box .modal-footer {
