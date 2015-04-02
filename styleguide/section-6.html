@@ -11,15 +11,16 @@
   <meta name="description" content="">
   <meta name="generator" content="kss-node">
   <meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic">
-	<link rel="stylesheet" href="public/kss.css">
+	<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic" />
+	<link type="text/css" rel="stylesheet" href="./public/kss.css" />
 
-	<link rel="stylesheet" href="../vendor/angular-ui-tree.min.css">
-	<link rel="stylesheet" href="../vendor/mdi/css/materialdesignicons.min.css" media="all"  type="text/css" />
-	<link rel="stylesheet" href="public/styleguide.css">
-	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css">
-	<link rel="stylesheet" href="../vendor/ui-grid-stable.min.css">
-	<link rel="stylesheet" href="../css/main.css">
+	<link type="text/css" rel="stylesheet" href="../vendor/angular-ui-tree.min.css"/>
+	<link type="text/css" rel="stylesheet" href="../vendor/mdi/css/materialdesignicons.min.css"/>
+	
+	<link type="text/css" rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css"/>
+	<link type="text/css" rel="stylesheet" href="../vendor/ui-grid-stable.min.css"/>
+	<link type="text/css" rel="stylesheet" href="../css/styleguide.css"/>
+	<link type="text/css" rel="stylesheet" href="../css/main.css"/>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular-animate.min.js"></script>
@@ -55,40 +56,46 @@
       <li class="kss-nav__menu-item">
         <a href="section-2.html">
           <span class="kss-nav__ref">2</span
-          ><span class="kss-nav__name">Colors</span>
+          ><span class="kss-nav__name">Components</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
         <a href="section-3.html">
           <span class="kss-nav__ref">3</span
-          ><span class="kss-nav__name">Layouts</span>
+          ><span class="kss-nav__name">Colors</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
         <a href="section-4.html">
           <span class="kss-nav__ref">4</span
-          ><span class="kss-nav__name">Icons</span>
+          ><span class="kss-nav__name">Layouts</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
         <a href="section-5.html">
           <span class="kss-nav__ref">5</span
-          ><span class="kss-nav__name">Scalability</span>
+          ><span class="kss-nav__name">Icons</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
         <a href="section-6.html">
           <span class="kss-nav__ref">6</span
-          ><span class="kss-nav__name">Resources</span>
+          ><span class="kss-nav__name">Scalability</span>
         </a>
         <ul class="kss-nav__menu-child">
             <li class="kss-nav__menu-item">
               <a href="section-6.html#kssref-6.1">
                 <span class="kss-nav__ref">6.1</span
-                ><span class="kss-nav__name">Urls</span>
+                ><span class="kss-nav__name">Big tables</span>
               </a>
             </li>
         </ul>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-7.html">
+          <span class="kss-nav__ref">7</span
+          ><span class="kss-nav__name">Resources</span>
+        </a>
       </li>
     </ul>
   </nav>
@@ -101,13 +108,13 @@
       <h1 class="kss-title kss-title--level-1">
         <a class="kss-title__permalink">
           <span class="kss-title__ref">6</span
-          >Resources
+          >Scalability
         </a>
       </h1>
 
 
       <div class="kss-description">
-        <p>Here you can find some links to go further in CSS best practices</p>
+        <p>How to adapt our elements to big databases</p>
 
       </div>
     </div>
@@ -120,21 +127,25 @@
       <h2 class="kss-title kss-title--level-2">
         <a class="kss-title__permalink">
           <span class="kss-title__ref">6.1</span
-          >Urls
+          >Big tables
         </a>
       </h2>
 
 
-      <div class="kss-description">
-        <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">https://developer.mozilla.org/en-US/docs/Web/CSS</a></p>
-<p><a href="http://philipwalton.com/articles/css-architecture/">http://philipwalton.com/articles/css-architecture/</a></p>
-<p><a href="http://styleguides.io/">http://styleguides.io/</a></p>
-<p><a href="http://alistapart.com/article/creating-style-guides">http://alistapart.com/article/creating-style-guides</a></p>
-<p><a href="http://axbom.com/slaying-5-ux-myths-good-mankind/">http://axbom.com/slaying-5-ux-myths-good-mankind/</a></p>
-
-      </div>
     </div>
 
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <div ui-grid="gridOptions" ui-grid-auto-resize class="myGrid"></div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div ui-grid=&quot;gridOptions&quot; ui-grid-auto-resize class=&quot;myGrid&quot;&gt;&lt;/div&gt;</code></pre>
+      </div>
 
       </section>
 </article>

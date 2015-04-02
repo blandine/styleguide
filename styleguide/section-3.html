@@ -11,15 +11,16 @@
   <meta name="description" content="">
   <meta name="generator" content="kss-node">
   <meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic">
-	<link rel="stylesheet" href="public/kss.css">
+	<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic" />
+	<link type="text/css" rel="stylesheet" href="./public/kss.css" />
 
-	<link rel="stylesheet" href="../vendor/angular-ui-tree.min.css">
-	<link rel="stylesheet" href="../vendor/mdi/css/materialdesignicons.min.css" media="all"  type="text/css" />
-	<link rel="stylesheet" href="public/styleguide.css">
-	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css">
-	<link rel="stylesheet" href="../vendor/ui-grid-stable.min.css">
-	<link rel="stylesheet" href="../css/main.css">
+	<link type="text/css" rel="stylesheet" href="../vendor/angular-ui-tree.min.css"/>
+	<link type="text/css" rel="stylesheet" href="../vendor/mdi/css/materialdesignicons.min.css"/>
+	
+	<link type="text/css" rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css"/>
+	<link type="text/css" rel="stylesheet" href="../vendor/ui-grid-stable.min.css"/>
+	<link type="text/css" rel="stylesheet" href="../css/styleguide.css"/>
+	<link type="text/css" rel="stylesheet" href="../css/main.css"/>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular-animate.min.js"></script>
@@ -55,25 +56,19 @@
       <li class="kss-nav__menu-item">
         <a href="section-2.html">
           <span class="kss-nav__ref">2</span
-          ><span class="kss-nav__name">Colors</span>
+          ><span class="kss-nav__name">Components</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
         <a href="section-3.html">
           <span class="kss-nav__ref">3</span
-          ><span class="kss-nav__name">Layouts</span>
+          ><span class="kss-nav__name">Colors</span>
         </a>
         <ul class="kss-nav__menu-child">
             <li class="kss-nav__menu-item">
               <a href="section-3.html#kssref-3.1">
                 <span class="kss-nav__ref">3.1</span
-                ><span class="kss-nav__name">Panels</span>
-              </a>
-            </li>
-            <li class="kss-nav__menu-item">
-              <a href="section-3.html#kssref-3.4">
-                <span class="kss-nav__ref">3.4</span
-                ><span class="kss-nav__name">Graphs</span>
+                ><span class="kss-nav__name">Main colors</span>
               </a>
             </li>
         </ul>
@@ -81,18 +76,24 @@
       <li class="kss-nav__menu-item">
         <a href="section-4.html">
           <span class="kss-nav__ref">4</span
-          ><span class="kss-nav__name">Icons</span>
+          ><span class="kss-nav__name">Layouts</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
         <a href="section-5.html">
           <span class="kss-nav__ref">5</span
-          ><span class="kss-nav__name">Scalability</span>
+          ><span class="kss-nav__name">Icons</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
         <a href="section-6.html">
           <span class="kss-nav__ref">6</span
+          ><span class="kss-nav__name">Scalability</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-7.html">
+          <span class="kss-nav__ref">7</span
           ><span class="kss-nav__name">Resources</span>
         </a>
       </li>
@@ -107,150 +108,141 @@
       <h1 class="kss-title kss-title--level-1">
         <a class="kss-title__permalink">
           <span class="kss-title__ref">3</span
-          >Layouts
+          >Colors
         </a>
       </h1>
 
 
       <div class="kss-description">
-        <p>Here you can find some templates for your layout. Normaly you will not have to worry about the sidenavs or the topbar since these are loaded around your view.</p>
+        <p>We would like to provide alternative themes but it&#39;s a WIP</p>
 
       </div>
     </div>
 
 
       </div>
-      <section id="kssref-3.0.1" class="kss-section kss-section--depth-3">
-
-    <div class="kss-style">
-      <h3 class="kss-title kss-title--level-3">
-        <a class="kss-title__permalink">
-          <span class="kss-title__ref">3.0.1</span
-          >Basic block layout
-        </a>
-      </h3>
-
-
-      <div class="kss-description">
-        <p>This is the basic layout of the entire page. One of the main priciples here is that the content sould never make the layout-container scroll, but rather the content itself.</p>
-<ul>
-<li>1 - Layout container</li>
-<li>2 - Topbar</li>
-<li>3 - Sidenav</li>
-<li>4 - Sidenav toggle</li>
-<li>5 - Ui view</li>
-<li>6 - Row</li>
-</ul>
-<p><img src="../img/001.png"/></p>
-
-      </div>
-    </div>
-
-
-      </section>
-      <section id="kssref-3.0.2" class="kss-section kss-section--depth-3">
-
-    <div class="kss-style">
-      <h3 class="kss-title kss-title--level-3">
-        <a class="kss-title__permalink">
-          <span class="kss-title__ref">3.0.2</span
-          >View layout
-        </a>
-      </h3>
-
-
-      <div class="kss-description">
-        <p>This is an example of a typical view layout. This is what you would use in the view that is then loaded into the basic layout.  This layout uses some custom <a  href="http://goo.gl/yYXeSV">Bootstrap</a> to stay responsive.</p>
-
-      </div>
-    </div>
-
-      <div class="kss-modifier__wrapper">
-        <div class="kss-modifier__heading kss-style">
-          Example
-        </div>
-        <div class="kss-modifier__example">
-          <div class="row">
-	<div class="col-lg-12">
-		<h4>View title</h4>
-		<p>Keep the title consistent, even in navigation and links. Im the description by the way.</p>
-	</div>
-</div>
-<div class="row">
-	<div class="col-lg-4">
-		<div class="material-depth-1 container-block">
-			<div class="wfm-block sub-header">Title</div>
-				This is  some content
-			</div>
-		</div>
-	</div>
-	<div class="col-lg-8">
-		<div class="material-depth-1 container-block">
-			<div class="wfm-block sub-header">Title</div>
-				This is  some content
-			</div>
-		</div>
-	</div>
-</div>
-        </div>
-      </div>
-
-      <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-lg-12&quot;&gt;
-		&lt;h4&gt;View title&lt;/h4&gt;
-		&lt;p&gt;Keep the title consistent, even in navigation and links. Im the description by the way.&lt;/p&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-lg-4&quot;&gt;
-		&lt;div class=&quot;material-depth-1 container-block&quot;&gt;
-			&lt;div class=&quot;wfm-block sub-header&quot;&gt;Title&lt;/div&gt;
-				This is  some content
-			&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-	&lt;div class=&quot;col-lg-8&quot;&gt;
-		&lt;div class=&quot;material-depth-1 container-block&quot;&gt;
-			&lt;div class=&quot;wfm-block sub-header&quot;&gt;Title&lt;/div&gt;
-				This is  some content
-			&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-      </div>
-
-      </section>
       <section id="kssref-3.1" class="kss-section kss-section--depth-2">
 
     <div class="kss-style">
       <h2 class="kss-title kss-title--level-2">
         <a class="kss-title__permalink">
           <span class="kss-title__ref">3.1</span
-          >Panels
+          >Main colors
         </a>
       </h2>
 
 
       <div class="kss-description">
-        <p>TODO</p>
+        <p>If you are in a sass environment you can use sass variables for these</p>
+<p>Blue</p>
+<ul class="swatch-list">
+    <li class="spacer material-depth-1 blue-100-swatch">
+       <md-tooltip>
+         $blue-100 (#99d6ff)
+       </md-tooltip>
+    </li>
+    <li class="spacer material-depth-1 blue-300-swatch">
+       <md-tooltip>
+           $blue-300 (#66c2ff)
+       </md-tooltip>
+    </li>
+    <li class="spacer material-depth-1 blue-500-swatch">
+       <md-tooltip>
+         $blue-500 (#0099FF)
+       </md-tooltip>
+    </li>
+</ul>
 
+<p>Orange</p>
+<ul class="swatch-list">
+    <li class="spacer material-depth-1 orange-400-swatch">
+       <md-tooltip>
+         $orange-400 (#ffc285)
+       </md-tooltip>
+    </li>
+    <li class="spacer material-depth-1 orange-600-swatch">
+       <md-tooltip>
+         $orange-600 (#FB8C00)
+       </md-tooltip>
+    </li>
+</ul>
+
+<p>Red</p>
+<ul class="swatch-list">
+    <li class="spacer material-depth-1 red-600-swatch">
+       <md-tooltip>
+         $red-600 (#ee8f7d)
+       </md-tooltip>
+    </li>
+</ul>
+
+<p>Green</p>
+<ul class="swatch-list">
+    <li class="spacer material-depth-1 green-100-swatch">
+       <md-tooltip>
+         $green-100 (#c2e085)
+       </md-tooltip>
+    </li>
+    <li class="spacer material-depth-1 green-400-swatch">
+       <md-tooltip>
+         $green-400 (#9CCC65)
+       </md-tooltip>
+    </li>
+</ul>
+
+<p>Pink</p>
+<ul class="swatch-list">
+    <li class="spacer material-depth-1 pink-100-swatch">
+       <md-tooltip>
+         $pink-100 (#f488c8)
+       </md-tooltip>
+    </li>
+    <li class="spacer material-depth-1 pink-500-swatch">
+       <md-tooltip>
+         $pink-500 (#f488c8)
+       </md-tooltip>
+    </li>
+</ul>
+
+<p>Gray</p>
+<ul class="swatch-list">
+    <li class="spacer material-depth-1 white-swatch">
+       <md-tooltip>
+         $white
+       </md-tooltip>
+    </li>
+    <li class="spacer material-depth-1 gray-012-swatch">
+       <md-tooltip>
+         $gray012
+       </md-tooltip>
+    </li>
+    <li class="spacer material-depth-1 gray-300-swatch">
+       <md-tooltip>
+         $gray-300 (#E0E0E0)
+       </md-tooltip>
+    </li>
+    <li class="spacer material-depth-1 gray-026-swatch">
+       <md-tooltip>
+         $gray026
+       </md-tooltip>
+    </li>
+    <li class="spacer material-depth-1 gray-054-swatch">
+       <md-tooltip>
+         $gray054
+       </md-tooltip>
+    </li>
+    <li class="spacer material-depth-1 gray-087-swatch">
+       <md-tooltip>
+         $gray087
+       </md-tooltip>
+    </li>
+    <li class="spacer material-depth-1 gray-100-swatch">
+       <md-tooltip>
+         $gray100
+       </md-tooltip>
+    </li>
+</ul>
       </div>
-    </div>
-
-
-      </section>
-      <section id="kssref-3.4" class="kss-section kss-section--depth-2">
-
-    <div class="kss-style">
-      <h2 class="kss-title kss-title--level-2">
-        <a class="kss-title__permalink">
-          <span class="kss-title__ref">3.4</span
-          >Graphs
-        </a>
-      </h2>
-
-
     </div>
 
 

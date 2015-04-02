@@ -11,15 +11,16 @@
   <meta name="description" content="">
   <meta name="generator" content="kss-node">
   <meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic">
-	<link rel="stylesheet" href="public/kss.css">
+	<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic" />
+	<link type="text/css" rel="stylesheet" href="./public/kss.css" />
 
-	<link rel="stylesheet" href="../vendor/angular-ui-tree.min.css">
-	<link rel="stylesheet" href="../vendor/mdi/css/materialdesignicons.min.css" media="all"  type="text/css" />
-	<link rel="stylesheet" href="public/styleguide.css">
-	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css">
-	<link rel="stylesheet" href="../vendor/ui-grid-stable.min.css">
-	<link rel="stylesheet" href="../css/main.css">
+	<link type="text/css" rel="stylesheet" href="../vendor/angular-ui-tree.min.css"/>
+	<link type="text/css" rel="stylesheet" href="../vendor/mdi/css/materialdesignicons.min.css"/>
+	
+	<link type="text/css" rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css"/>
+	<link type="text/css" rel="stylesheet" href="../vendor/ui-grid-stable.min.css"/>
+	<link type="text/css" rel="stylesheet" href="../css/styleguide.css"/>
+	<link type="text/css" rel="stylesheet" href="../css/main.css"/>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular-animate.min.js"></script>
@@ -55,31 +56,31 @@
       <li class="kss-nav__menu-item">
         <a href="section-2.html">
           <span class="kss-nav__ref">2</span
-          ><span class="kss-nav__name">Colors</span>
+          ><span class="kss-nav__name">Components</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
         <a href="section-3.html">
           <span class="kss-nav__ref">3</span
-          ><span class="kss-nav__name">Layouts</span>
+          ><span class="kss-nav__name">Colors</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
         <a href="section-4.html">
           <span class="kss-nav__ref">4</span
-          ><span class="kss-nav__name">Icons</span>
+          ><span class="kss-nav__name">Layouts</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
         <a href="section-5.html">
           <span class="kss-nav__ref">5</span
-          ><span class="kss-nav__name">Scalability</span>
+          ><span class="kss-nav__name">Icons</span>
         </a>
         <ul class="kss-nav__menu-child">
             <li class="kss-nav__menu-item">
               <a href="section-5.html#kssref-5.1">
                 <span class="kss-nav__ref">5.1</span
-                ><span class="kss-nav__name">Big tables</span>
+                ><span class="kss-nav__name">Quick symbol library</span>
               </a>
             </li>
         </ul>
@@ -87,6 +88,12 @@
       <li class="kss-nav__menu-item">
         <a href="section-6.html">
           <span class="kss-nav__ref">6</span
+          ><span class="kss-nav__name">Scalability</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-7.html">
+          <span class="kss-nav__ref">7</span
           ><span class="kss-nav__name">Resources</span>
         </a>
       </li>
@@ -101,13 +108,15 @@
       <h1 class="kss-title kss-title--level-1">
         <a class="kss-title__permalink">
           <span class="kss-title__ref">5</span
-          >Scalability
+          >Icons
         </a>
       </h1>
 
 
       <div class="kss-description">
-        <p>How to adapt our elements to big databases</p>
+        <p>We <u>only</u> use <a href="http://materialdesignicons.com/">Material icons</a>.
+To use an icon, use the i-tag and apply the classes &quot;mdi&quot; and &quot;mdi-icon-name&quot; (replacing icon-name with the name form the icon index).</p>
+<p>In the cases where icons appear in the defined markup throughout this styleguide, they might have special style rules applied to them so be sure that the functionality is intact if you decide to remove them.</p>
 
       </div>
     </div>
@@ -120,25 +129,35 @@
       <h2 class="kss-title kss-title--level-2">
         <a class="kss-title__permalink">
           <span class="kss-title__ref">5.1</span
-          >Big tables
+          >Quick symbol library
         </a>
       </h2>
 
 
+      <div class="kss-description">
+        <p>Here you can find the icons we currently use and their name:</p>
+<ul>
+<li><i class="mdi mdi-menu">&quot;mdi-menu&quot; - Trigger a contextual menu</i></li>
+<li><i class="mdi mdi-menu-down">&quot;mdi-menu-down&quot; - Indicate sorting in tables</i></li>
+<li><i class="mdi mdi-chevron-left">&quot;mdi-chevron-left&quot; - Indicate expandable row</i></li>
+<li><i class="mdi mdi-alert">&quot;mdi-alert&quot; - Used for notices</i></li>
+<li><i class='mdi mdi-thumb-up'>&quot;mdi-thumb-up&quot;- Positive feedback</i></li>
+<li><i class="mdi mdi-alert-circle">&quot;mdi-alert-circle&quot; - Used for general notifications</i></li>
+<li><i class="mdi mdi-alert-octagon">&quot;mdi-alert-octagon&quot; - Used for errors</i></li>
+<li><i class="mdi mdi-plus">&quot;mdi-plus&quot; - Add new item</i></li>
+<li><i class="mdi mdi-content-copy">&quot;mdi-content-copy&quot; - Duplicate the item</i></li>
+<li><i class="mdi mdi-pencil">&quot;mdi-pencil&quot; - Edit the item</i></li>
+<li><i class="mdi mdi-delete">&quot;mdi-delete&quot; - Remove the item</i></li>
+<li><i class="mdi mdi-fast-forward">&quot;mdi-fast-forward&quot; - Sidenav toggle right</i></li>
+<li><i class="mdi mdi-rewind">&quot;mdi-rewind&quot; - Sidenav toggle left</i></li>
+<li><i class="mdi mdi-magnify">&quot;mdi-magnify&quot; - Indicate a search</i></li>
+<li><i class="mdi mdi-filter-outline">&quot;mdi-filter-outline&quot; - Indicate a filter</i></li>
+<li><i class="mdi mdi-account">&quot;mdi-account&quot; - User and account related actions</i></li>
+</ul>
+
+      </div>
     </div>
 
-      <div class="kss-modifier__wrapper">
-        <div class="kss-modifier__heading kss-style">
-          Example
-        </div>
-        <div class="kss-modifier__example">
-          <div ui-grid="{ data: myData }" class="myGrid"></div>
-        </div>
-      </div>
-
-      <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div ui-grid=&quot;{ data: myData }&quot; class=&quot;myGrid&quot;&gt;&lt;/div&gt;</code></pre>
-      </div>
 
       </section>
 </article>

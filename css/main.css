@@ -105,6 +105,9 @@ body {
   .styleguide-break span:before {
     content: "This element does not exist in material design. "; }
 
+.angular-req span:before {
+  content: "This element require additional angular directives. " !important; }
+
 .material-depth-1, .wfm-datepicker-wrap, .layout-container .content, .wfm-btn-default, .wfm-btn-primary, .wfm-fab, .dropdown .inner ul, .sidenav-toggle .sidenav-wrapper {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); }
 
@@ -588,20 +591,52 @@ md-slider.md-min .md-thumb:after {
   width: 100%;
   text-align: left; }
 
-.wfm-table td, th {
+.wfm-table td, .wfm-table th {
   border: 1px solid rgba(0, 0, 0, 0.06);
   color: rgba(0, 0, 0, 0.54);
   padding: 5px; }
 
-.wfm-table th {
+.wfm-table th, .wfm-table-header, .ui-grid-header-cell {
   color: rgba(0, 0, 0, 0.87);
   background-color: #99d6ff;
   text-align: center; }
-  .wfm-table th i {
+  .wfm-table th i, .wfm-table-header i, .ui-grid-header-cell i {
     float: right; }
 
 .wfm-table .number-cell {
   text-align: right; }
+
+/*for grid*/
+.ui-grid-header-cell i {
+  text-align: right;
+  float: none; }
+
+.mdi-icon, [class^="ui-grid-icon"]:before, [class*=" ui-grid-icon"]:before {
+  display: inline-block;
+  font: normal normal normal 24px/1 MaterialDesignIcons;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0); }
+
+.ui-grid-icon-angle-down:before {
+  content: "\f35d"; }
+
+.ui-grid-icon-down-dir:before {
+  content: "\f35e"; }
+
+.ui-grid-icon-up-dir:before {
+  content: "\f361"; }
+
+.ui-grid-icon-sort-alt-up:before {
+  content: "\f447"; }
+
+.ui-grid-icon-sort-alt-down:before {
+  content: "\f448"; }
+
+.ui-grid-icon-cancel:before {
+  content: "\f1f4"; }
 
 .wfm-table-multi th:first-child, .wfm-table-multi td:first-child {
   color: rgba(0, 0, 0, 0.87);
