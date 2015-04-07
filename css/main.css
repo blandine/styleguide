@@ -926,13 +926,13 @@ md-slider.md-min .md-thumb:after {
   text-align: right; }
 
 md-progress-linear.md-default-theme .md-bar {
-  background-color: #66c2ff !important; }
+  background-color: #ec38a3 !important; }
 
 md-progress-circular.md-default-theme .md-inner .md-left .md-half-circle {
-  border-left-color: #66c2ff; }
+  border-left-color: #ec38a3; }
 
 md-progress-circular.md-default-theme .md-inner .md-left .md-half-circle, md-progress-circular.md-default-theme .md-inner .md-right .md-half-circle, md-progress-circular .md-inner .md-gap {
-  border-top-color: #66c2ff; }
+  border-top-color: #ec38a3; }
 
 md-progress-circular.md-default-theme .md-inner .md-right .md-half-circle {
-  border-right-color: #66c2ff; }
+  border-right-color: #ec38a3; }
