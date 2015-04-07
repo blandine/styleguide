@@ -127,7 +127,7 @@ body {
   top: 0;
   z-index: -1; }
 
-.wfm-block, .angular-ui-tree-handle, select, .wfm-radio, .wfm-checkbox, .tab-group .tab-container {
+.wfm-block, .angular-ui-tree-handle, select, .wfm-radio, .wfm-checkbox, .wfm-accordion-content, .wfm-accordion-subheader, .tab-group .tab-container {
   padding: 5px;
   width: 100%; }
 
@@ -695,7 +695,11 @@ md-slider.md-min .md-thumb:after {
 .modal-box aside {
   text-align: right; }
 
-.accordion-head {
+.wfm-accordion {
+  list-style: none;
+  padding: 0; }
+
+.wfm-accordion-head {
   width: 100%;
   padding: 5px;
   background-color: #66c2ff;
@@ -703,25 +707,20 @@ md-slider.md-min .md-thumb:after {
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   cursor: pointer; }
 
-.accordion-head i {
-  float: right; }
-
-.acc-content {
-  background: #ffffff; }
-
-.wfm-accordion.ng-show.accordion-head i {
+.wfm-accordion-head i {
   float: right;
-  background: red; }
+  transition: all 0.5s ease-in-out; }
+
+.wfm-accordion-subheader {
+  background-color: #99d6ff;
+  color: rgba(0, 0, 0, 0.87); }
 
 .sidenav-header.accordion-head, .bottom-header.accordion-head {
   list-style: none;
-  cursor: pointer;
-  /*dark hover*/
-  /*
-	&:hover, &:active{
-		background-color:#003466;
-		color:$white;
-	}*/ }
+  cursor: pointer; }
+
+.toggle-icon-open {
+  transform: rotate(-90deg); }
 
 .dropdown {
   position: relative; }
