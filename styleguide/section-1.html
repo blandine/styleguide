@@ -317,11 +317,7 @@
 <li>
 	List Item 1
 	<div class="wfm-leave-behind">
-	<span>
-		<p>
-			Options
-		</p>
-	</span>
+			<span>Options</span>
 	</div>
 </li>
 <li class="active">
@@ -342,6 +338,12 @@
 		</span>
 	</div>
 </li>
+<li>
+	List Item 4 without actions
+</li>
+<li>
+	<i class="mdi mdi-alert"></i> List Item 5 with icon
+</li>
 </ul>
         </div>
       </div>
@@ -351,11 +353,7 @@
 &lt;li&gt;
 	List Item 1
 	&lt;div class=&quot;wfm-leave-behind&quot;&gt;
-	&lt;span&gt;
-		&lt;p&gt;
-			Options
-		&lt;/p&gt;
-	&lt;/span&gt;
+			&lt;span&gt;Options&lt;/span&gt;
 	&lt;/div&gt;
 &lt;/li&gt;
 &lt;li class=&quot;active&quot;&gt;
@@ -375,6 +373,12 @@
 			&lt;i class=&quot;mdi mdi-delete&quot;&gt;&lt;/i&gt;
 		&lt;/span&gt;
 	&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+	List Item 4 without actions
+&lt;/li&gt;
+&lt;li&gt;
+	&lt;i class=&quot;mdi mdi-alert&quot;&gt;&lt;/i&gt; List Item 5 with icon
 &lt;/li&gt;
 &lt;/ul&gt;</code></pre>
       </div>
@@ -864,17 +868,17 @@ Each tree line has a right align span child that could show an icon if the line 
         </div>
         <div class="kss-modifier__example">
           Default
-<md-slider flex min="0" max="100"></md-slider>
+<md-slider flex min="0" max="100" aria-label="slider"></md-slider>
 With label
-<md-slider flex md-discrete min="0" max="100" aria-label="rating"></md-slider>
+<md-slider flex md-discrete min="0" max="100" aria-label="slider"></md-slider>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
         <pre class="prettyprint linenums lang-html"><code data-language="html">Default
-&lt;md-slider flex min=&quot;0&quot; max=&quot;100&quot;&gt;&lt;/md-slider&gt;
+&lt;md-slider flex min=&quot;0&quot; max=&quot;100&quot; aria-label=&quot;slider&quot;&gt;&lt;/md-slider&gt;
 With label
-&lt;md-slider flex md-discrete min=&quot;0&quot; max=&quot;100&quot; aria-label=&quot;rating&quot;&gt;&lt;/md-slider&gt;</code></pre>
+&lt;md-slider flex md-discrete min=&quot;0&quot; max=&quot;100&quot; aria-label=&quot;slider&quot;&gt;&lt;/md-slider&gt;</code></pre>
       </div>
 
       </section>
@@ -1204,14 +1208,34 @@ There are different types of buttons, however try to use one type of button per 
           Example
         </div>
         <div class="kss-modifier__example">
-          <button class="wfm-fab default">+</button>
-<button class="wfm-fab mini">+</button>
+          <button class="wfm-fab big info"><i class="mdi mdi-account"></i></button>
+<md-tooltip>My account</md-tooltip>
+<button class="wfm-fab big success"><i class="mdi mdi-plus"></i></button>
+<md-tooltip>Add a thing</md-tooltip>
+<button class="wfm-fab big warning"><i class="mdi mdi-account"></i></button>
+<md-tooltip>Edit account</md-tooltip>
+<button class="wfm-fab mini info"><i class="mdi mdi-account"></i></button>
+<md-tooltip>My account</md-tooltip>
+<button class="wfm-fab mini success"><i class="mdi mdi-plus"></i></button>
+<md-tooltip>Add a thing</md-tooltip>
+<button class="wfm-fab mini warning"><i class="mdi mdi-account"></i></button>
+<md-tooltip>Edit account</md-tooltip>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;button class=&quot;wfm-fab default&quot;&gt;+&lt;/button&gt;
-&lt;button class=&quot;wfm-fab mini&quot;&gt;+&lt;/button&gt;</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;button class=&quot;wfm-fab big info&quot;&gt;&lt;i class=&quot;mdi mdi-account&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;md-tooltip&gt;My account&lt;/md-tooltip&gt;
+&lt;button class=&quot;wfm-fab big success&quot;&gt;&lt;i class=&quot;mdi mdi-plus&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;md-tooltip&gt;Add a thing&lt;/md-tooltip&gt;
+&lt;button class=&quot;wfm-fab big warning&quot;&gt;&lt;i class=&quot;mdi mdi-account&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;md-tooltip&gt;Edit account&lt;/md-tooltip&gt;
+&lt;button class=&quot;wfm-fab mini info&quot;&gt;&lt;i class=&quot;mdi mdi-account&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;md-tooltip&gt;My account&lt;/md-tooltip&gt;
+&lt;button class=&quot;wfm-fab mini success&quot;&gt;&lt;i class=&quot;mdi mdi-plus&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;md-tooltip&gt;Add a thing&lt;/md-tooltip&gt;
+&lt;button class=&quot;wfm-fab mini warning&quot;&gt;&lt;i class=&quot;mdi mdi-account&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;md-tooltip&gt;Edit account&lt;/md-tooltip&gt;</code></pre>
       </div>
 
       </section>
@@ -1492,7 +1516,7 @@ There are several different markers to make the type of notice easy to spot:</p>
 <div class="alert-info notice-spacer"><i class='mdi mdi-information'></i> Info: A user logged out.</div>
 <div class="alert-detail notice-spacer">I was born to show details.</div>
 </div>
-<div class="alert-warning notice-spacer"><i class='mdi mdi-alert'></i> Warning: Press refresh as the data was updated by another user."</div>
+<div class="alert-warning notice-spacer"><i class='mdi mdi-alert'></i> Warning: Press refresh as the data was updated by another user.</div>
 <div class="alert-error notice-spacer"><i class='mdi mdi-alert-octagon'></i> Error: Something exploded so fix it.</div>
         </div>
       </div>
@@ -1503,7 +1527,7 @@ There are several different markers to make the type of notice easy to spot:</p>
 &lt;div class=&quot;alert-info notice-spacer&quot;&gt;&lt;i class=&#x27;mdi mdi-information&#x27;&gt;&lt;/i&gt; Info: A user logged out.&lt;/div&gt;
 &lt;div class=&quot;alert-detail notice-spacer&quot;&gt;I was born to show details.&lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&quot;alert-warning notice-spacer&quot;&gt;&lt;i class=&#x27;mdi mdi-alert&#x27;&gt;&lt;/i&gt; Warning: Press refresh as the data was updated by another user.&quot;&lt;/div&gt;
+&lt;div class=&quot;alert-warning notice-spacer&quot;&gt;&lt;i class=&#x27;mdi mdi-alert&#x27;&gt;&lt;/i&gt; Warning: Press refresh as the data was updated by another user.&lt;/div&gt;
 &lt;div class=&quot;alert-error notice-spacer&quot;&gt;&lt;i class=&#x27;mdi mdi-alert-octagon&#x27;&gt;&lt;/i&gt; Error: Something exploded so fix it.&lt;/div&gt;</code></pre>
       </div>
 
@@ -1692,11 +1716,11 @@ Please note that a menu item can not open another menu and there are no nested m
         <div class="kss-modifier__example">
           <div class="dropdown" tabindex="0">
 <i class="context-trigger mdi mdi-menu" ng-click="contextTrigger1 = !contextTrigger1"></i>
-<div class="inner right material-depth-2" ng-cloak ng-show="contextTrigger1">
-	<ul>
-		<li><i class="mdi mdi-account"> Sign out</i></li>
-		<li><i class="mdi mdi-plus"> Add a new agent</i></li>
-		<li><i class="mdi mdi-alert"> Drop agents table</i></li>
+<div class="material-depth-2" ng-cloak ng-show="contextTrigger1">
+	<ul class="wfm-list">
+		<li><i class="mdi mdi-account"></i>Sign out</li>
+		<li><i class="mdi mdi-plus"></i>Add a new agent</li>
+		<li><i class="mdi mdi-alert"></i>Drop agents table</li>
 	</ul>
 </div>
 </div>
@@ -1706,11 +1730,11 @@ Please note that a menu item can not open another menu and there are no nested m
       <div class="kss-markup kss-style">
         <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;dropdown&quot; tabindex=&quot;0&quot;&gt;
 &lt;i class=&quot;context-trigger mdi mdi-menu&quot; ng-click=&quot;contextTrigger1 = !contextTrigger1&quot;&gt;&lt;/i&gt;
-&lt;div class=&quot;inner right material-depth-2&quot; ng-cloak ng-show=&quot;contextTrigger1&quot;&gt;
-	&lt;ul&gt;
-		&lt;li&gt;&lt;i class=&quot;mdi mdi-account&quot;&gt; Sign out&lt;/i&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;i class=&quot;mdi mdi-plus&quot;&gt; Add a new agent&lt;/i&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;i class=&quot;mdi mdi-alert&quot;&gt; Drop agents table&lt;/i&gt;&lt;/li&gt;
+&lt;div class=&quot;material-depth-2&quot; ng-cloak ng-show=&quot;contextTrigger1&quot;&gt;
+	&lt;ul class=&quot;wfm-list&quot;&gt;
+		&lt;li&gt;&lt;i class=&quot;mdi mdi-account&quot;&gt;&lt;/i&gt;Sign out&lt;/li&gt;
+		&lt;li&gt;&lt;i class=&quot;mdi mdi-plus&quot;&gt;&lt;/i&gt;Add a new agent&lt;/li&gt;
+		&lt;li&gt;&lt;i class=&quot;mdi mdi-alert&quot;&gt;&lt;/i&gt;Drop agents table&lt;/li&gt;
 	&lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;</code></pre>
@@ -1741,7 +1765,7 @@ Please note that a menu item can not open another menu and there are no nested m
         <div class="kss-modifier__example">
           <div>
 <div class="accordion-head" ng-click="accordionToggle1 = !accordionToggle1">Title A<i class="mdi mdi-chevron-down"></i></div>
-<div ng-cloak ng-show="accordionToggle1">
+<div class="acc-content" ng-cloak ng-show="accordionToggle1">
 	<div>
 		<div class="wfm-block"><a ="#">a</a></div>
 	</div>
@@ -1749,7 +1773,7 @@ Please note that a menu item can not open another menu and there are no nested m
 </div>
 <div>
 <div class="accordion-head" ng-click="accordionToggle2 = !accordionToggle2">Title B<i class="mdi mdi-chevron-down"></i></div>
-<div ng-cloak ng-show="accordionToggle2">
+<div class="acc-content" ng-cloak ng-show="accordionToggle2">
 	<div>
 		<div class="wfm-block"><a ="#">b</a></div>
 	</div>
@@ -1757,7 +1781,7 @@ Please note that a menu item can not open another menu and there are no nested m
 </div>
 <div>
 <div class="accordion-head" ng-click="accordionToggle3 = !accordionToggle3">Title C<i class="mdi mdi-chevron-down"></i></div>
-<div ng-cloak ng-show="accordionToggle3">
+<div class="acc-content" ng-cloak ng-show="accordionToggle3">
 	<div class="wfm-block">Accordions can have headers inside them.</div>
 	<div class="bottom-header">
 		<a ="#">I am a header inside C</a>
@@ -1775,7 +1799,7 @@ Please note that a menu item can not open another menu and there are no nested m
       <div class="kss-markup kss-style">
         <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div&gt;
 &lt;div class=&quot;accordion-head&quot; ng-click=&quot;accordionToggle1 = !accordionToggle1&quot;&gt;Title A&lt;i class=&quot;mdi mdi-chevron-down&quot;&gt;&lt;/i&gt;&lt;/div&gt;
-&lt;div ng-cloak ng-show=&quot;accordionToggle1&quot;&gt;
+&lt;div class=&quot;acc-content&quot; ng-cloak ng-show=&quot;accordionToggle1&quot;&gt;
 	&lt;div&gt;
 		&lt;div class=&quot;wfm-block&quot;&gt;&lt;a =&quot;#&quot;&gt;a&lt;/a&gt;&lt;/div&gt;
 	&lt;/div&gt;
@@ -1783,7 +1807,7 @@ Please note that a menu item can not open another menu and there are no nested m
 &lt;/div&gt;
 &lt;div&gt;
 &lt;div class=&quot;accordion-head&quot; ng-click=&quot;accordionToggle2 = !accordionToggle2&quot;&gt;Title B&lt;i class=&quot;mdi mdi-chevron-down&quot;&gt;&lt;/i&gt;&lt;/div&gt;
-&lt;div ng-cloak ng-show=&quot;accordionToggle2&quot;&gt;
+&lt;div class=&quot;acc-content&quot; ng-cloak ng-show=&quot;accordionToggle2&quot;&gt;
 	&lt;div&gt;
 		&lt;div class=&quot;wfm-block&quot;&gt;&lt;a =&quot;#&quot;&gt;b&lt;/a&gt;&lt;/div&gt;
 	&lt;/div&gt;
@@ -1791,7 +1815,7 @@ Please note that a menu item can not open another menu and there are no nested m
 &lt;/div&gt;
 &lt;div&gt;
 &lt;div class=&quot;accordion-head&quot; ng-click=&quot;accordionToggle3 = !accordionToggle3&quot;&gt;Title C&lt;i class=&quot;mdi mdi-chevron-down&quot;&gt;&lt;/i&gt;&lt;/div&gt;
-&lt;div ng-cloak ng-show=&quot;accordionToggle3&quot;&gt;
+&lt;div class=&quot;acc-content&quot; ng-cloak ng-show=&quot;accordionToggle3&quot;&gt;
 	&lt;div class=&quot;wfm-block&quot;&gt;Accordions can have headers inside them.&lt;/div&gt;
 	&lt;div class=&quot;bottom-header&quot;&gt;
 		&lt;a =&quot;#&quot;&gt;I am a header inside C&lt;/a&gt;
