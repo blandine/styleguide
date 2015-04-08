@@ -69,6 +69,10 @@
 .wfm-datepicker .text-info {
   color: inherit; }
 
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 10px !important;
+  margin-bottom: 10px !important; }
+
 h1 {
   font-size: 36px; }
 
@@ -79,7 +83,8 @@ h3 {
   font-size: 24px; }
 
 h4 {
-  font-size: 18px; }
+  font-size: 18px;
+  margin: 10px !important; }
 
 h5 {
   font-size: 14px; }
@@ -139,8 +144,9 @@ body {
   color: rgba(0, 0, 0, 0.54); }
 
 .layout-container {
+  padding-top: 30px;
   width: 100%;
-  height: 100%;
+  max-height: 100%;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: row;
@@ -574,6 +580,7 @@ md-slider.md-min .md-thumb:after {
 .wfm-fab {
   transition: all 0.2s ease-in-out;
   cursor: pointer;
+  background-color: #ec38a3;
   border: none;
   font-size: 24px;
   color: white;
@@ -593,9 +600,6 @@ md-slider.md-min .md-thumb:after {
 
 .wfm-fab.success {
   background-color: #c2e085; }
-
-.wfm-fab.warning {
-  background-color: #ffc285; }
 
 .wfm-fab.info {
   background-color: #0099FF; }

@@ -739,7 +739,7 @@ Each tree line has a right align span child that could show an icon if the line 
 
 
       <div class="kss-description">
-        <p>Todo</p>
+        <p>Checkboxes are used for selecting multiple input options.</p>
 
       </div>
     </div>
@@ -1070,7 +1070,7 @@ Second header title
 
 
       <div class="kss-description">
-        <p>TODO</p>
+        <p>These headers are twice as thick as the normal headers. They are only used in the sidenavs and should not be part of the normal layout.</p>
 
       </div>
     </div>
@@ -1198,7 +1198,7 @@ There are different types of buttons, however try to use one type of button per 
 
 
       <div class="kss-description">
-        <p>TODO</p>
+        <p>The floating action button functions much like the primary raised button in that there should preferably only be one per view, indicating the primary positive action. More about when to use it can be found in the <a href="http://www.google.com/design/spec/components/buttons.html#buttons-floating-action-button">google material guidelines.</a></p>
 
       </div>
     </div>
@@ -1208,34 +1208,34 @@ There are different types of buttons, however try to use one type of button per 
           Example
         </div>
         <div class="kss-modifier__example">
-          <button class="wfm-fab big info"><i class="mdi mdi-account"></i></button>
+          <button class="wfm-fab big"><i class="mdi mdi-account"></i></button>
+<md-tooltip>My account</md-tooltip>
+<button class="wfm-fab big info"><i class="mdi mdi-account"></i></button>
 <md-tooltip>My account</md-tooltip>
 <button class="wfm-fab big success"><i class="mdi mdi-plus"></i></button>
 <md-tooltip>Add a thing</md-tooltip>
-<button class="wfm-fab big warning"><i class="mdi mdi-account"></i></button>
-<md-tooltip>Edit account</md-tooltip>
+<button class="wfm-fab mini"><i class="mdi mdi-account"></i></button>
+<md-tooltip>My account</md-tooltip>
 <button class="wfm-fab mini info"><i class="mdi mdi-account"></i></button>
 <md-tooltip>My account</md-tooltip>
 <button class="wfm-fab mini success"><i class="mdi mdi-plus"></i></button>
 <md-tooltip>Add a thing</md-tooltip>
-<button class="wfm-fab mini warning"><i class="mdi mdi-account"></i></button>
-<md-tooltip>Edit account</md-tooltip>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;button class=&quot;wfm-fab big info&quot;&gt;&lt;i class=&quot;mdi mdi-account&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;button class=&quot;wfm-fab big&quot;&gt;&lt;i class=&quot;mdi mdi-account&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;md-tooltip&gt;My account&lt;/md-tooltip&gt;
+&lt;button class=&quot;wfm-fab big info&quot;&gt;&lt;i class=&quot;mdi mdi-account&quot;&gt;&lt;/i&gt;&lt;/button&gt;
 &lt;md-tooltip&gt;My account&lt;/md-tooltip&gt;
 &lt;button class=&quot;wfm-fab big success&quot;&gt;&lt;i class=&quot;mdi mdi-plus&quot;&gt;&lt;/i&gt;&lt;/button&gt;
 &lt;md-tooltip&gt;Add a thing&lt;/md-tooltip&gt;
-&lt;button class=&quot;wfm-fab big warning&quot;&gt;&lt;i class=&quot;mdi mdi-account&quot;&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;md-tooltip&gt;Edit account&lt;/md-tooltip&gt;
+&lt;button class=&quot;wfm-fab mini&quot;&gt;&lt;i class=&quot;mdi mdi-account&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;md-tooltip&gt;My account&lt;/md-tooltip&gt;
 &lt;button class=&quot;wfm-fab mini info&quot;&gt;&lt;i class=&quot;mdi mdi-account&quot;&gt;&lt;/i&gt;&lt;/button&gt;
 &lt;md-tooltip&gt;My account&lt;/md-tooltip&gt;
 &lt;button class=&quot;wfm-fab mini success&quot;&gt;&lt;i class=&quot;mdi mdi-plus&quot;&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;md-tooltip&gt;Add a thing&lt;/md-tooltip&gt;
-&lt;button class=&quot;wfm-fab mini warning&quot;&gt;&lt;i class=&quot;mdi mdi-account&quot;&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;md-tooltip&gt;Edit account&lt;/md-tooltip&gt;</code></pre>
+&lt;md-tooltip&gt;Add a thing&lt;/md-tooltip&gt;</code></pre>
       </div>
 
       </section>
@@ -1591,7 +1591,7 @@ There are several different markers to make the type of notice easy to spot:</p>
           Example
         </div>
         <div class="kss-modifier__example">
-          <div class="modal-box">
+          <div ng-cloak class="modal-box">
 	<button ng-click="modalLaunch1 = !modalLaunch1" class="wfm-btn wfm-btn-default">Open</button>
 	<div ng-cloak ng-show="modalLaunch1">
 		<div class="modalbg">
@@ -1616,7 +1616,7 @@ There are several different markers to make the type of notice easy to spot:</p>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;modal-box&quot;&gt;
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div ng-cloak class=&quot;modal-box&quot;&gt;
 	&lt;button ng-click=&quot;modalLaunch1 = !modalLaunch1&quot; class=&quot;wfm-btn wfm-btn-default&quot;&gt;Open&lt;/button&gt;
 	&lt;div ng-cloak ng-show=&quot;modalLaunch1&quot;&gt;
 		&lt;div class=&quot;modalbg&quot;&gt;
