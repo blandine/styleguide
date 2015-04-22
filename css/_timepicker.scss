@@ -1,0 +1,21 @@
+// Timepicker
+//
+//The timepicker is based on bootstraps timepicker and all we do is wrap it and apply
+//some special classes to make it more compatible with material design.
+//
+//Markup:
+//<input type="text" hour-input ng-model="myHours" />  
+//<div class="wfm-timepicker-wrap" layout="row">
+//  <input type="text" ng-model="timeHours" flex="45"/>
+//  <span>:</span>
+//  <input type="text" ng-model="timeMinutes" flex="45" />
+//</div>
+//<div>  
+//  <md-input-container flex="" class="md-default-theme">
+//          <label for="input_00D">First Name</label>
+//          <input ng-model="startTime" id="input_00D">
+//  </md-input-container>
+//</div>        
+//
+//Styleguide 2.3
+//

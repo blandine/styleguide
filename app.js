@@ -1,4 +1,4 @@
-var app = angular.module('styleguideApp', ['ngMaterial', 'ui.grid', 'ui.grid.autoResize', 'ui.grid.exporter', 'ui.grid.selection', 'ui.bootstrap'])
+var app = angular.module('styleguideApp', ['ngMaterial', 'ui.grid', 'ui.grid.autoResize', 'ui.grid.exporter', 'ui.grid.selection', 'ui.bootstrap', 'ui.bootstrap.timepicker', 'wfm.components.timepicker'])
 .controller('mainCtrl', function ($scope) {
   /*
   * Code for Grid
@@ -26,5 +26,7 @@ var app = angular.module('styleguideApp', ['ngMaterial', 'ui.grid', 'ui.grid.aut
   $scope.dayInRange = function(date, mode) {
     console.log('inRange');
   };
+
+    $scope.startTime = new Date();  
 
 });
