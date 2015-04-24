@@ -1,5 +1,5 @@
 var app = angular.module('styleguideApp', ['ngMaterial', 'ui.grid', 'ui.grid.autoResize', 'ui.grid.exporter', 'ui.grid.selection', 'ui.bootstrap', 'ui.bootstrap.timepicker', 'wfm.components.timepicker'])
-.controller('mainCtrl', function ($scope) {
+    .controller('mainCtrl', function ($scope, $filter) {
   /*
   * Code for Grid
   */
@@ -27,6 +27,23 @@ var app = angular.module('styleguideApp', ['ngMaterial', 'ui.grid', 'ui.grid.aut
     console.log('inRange');
   };
 
-    $scope.startTime = new Date();  
+
+  /*
+   * Code for timepicker
+   */  
+	$scope.$watch('sometime', function(value) {
+	    $scope.formattedSometime = ($scope.sometime != null)? $filter('date')($scope.sometime, 'HH:mm') : null;	    
+	});
+
+
+	$scope.increaseOneHour = function() {
+	    var newDate = new Date();
+	    newDate.setHours($scope.sometime.getHours() + 1);
+	    newDate.setMinutes($scope.sometime.getMinutes());
+	    console.log("before assign", newDate);
+	    $scope.sometime = newDate;	
+	};
+
+    
 
 });

@@ -4,18 +4,27 @@
 //some special classes to make it more compatible with material design.
 //
 //Markup:
-//<input type="text" hour-input ng-model="myHours" />  
-//<div class="wfm-timepicker-wrap" layout="row">
-//  <input type="text" ng-model="timeHours" flex="45"/>
-//  <span>:</span>
-//  <input type="text" ng-model="timeMinutes" flex="45" />
+//<div class="timepicker-wrapper">
+//<wfm-timepicker ng-model="sometime" layout="row" use-meridian="true">
+//</wfm-timepicker>
+//<input type="text" ng-model="formattedSometime" placeholder="formatted time"  />
+//<button ng-click="increaseOneHour()">Increase one hour</button>
 //</div>
-//<div>  
-//  <md-input-container flex="" class="md-default-theme">
-//          <label for="input_00D">First Name</label>
-//          <input ng-model="startTime" id="input_00D">
-//  </md-input-container>
-//</div>        
 //
 //Styleguide 2.3
 //
+
+
+
+.timepicker-wrapper {
+  width: 200px;
+  
+  select {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
+  input {
+    padding-left: 5px;
+  }
+}
+
