@@ -1,4 +1,4 @@
-var app = angular.module('styleguideApp', ['ngMaterial', 'ui.grid', 'ui.grid.autoResize', 'ui.grid.exporter', 'ui.grid.selection', 'ui.bootstrap', 'ui.bootstrap.timepicker', 'wfm.components.timepicker'])
+var app = angular.module('styleguideApp', ['ngMaterial', 'ui.grid', 'ui.grid.autoResize', 'ui.grid.exporter', 'ui.grid.selection', 'ui.bootstrap', 'wfm.components.timepicker'])
     .controller('mainCtrl', function ($scope, $filter) {
   /*
   * Code for Grid
