@@ -35,13 +35,27 @@ var app = angular.module('styleguideApp', ['ngMaterial', 'ui.grid', 'ui.grid.aut
 	    $scope.formattedSometime = ($scope.sometime != null)? $filter('date')($scope.sometime, 'HH:mm') : null;	    
 	});
 
+        
 
 	$scope.increaseOneHour = function() {
-	    var newDate = new Date();
-	    newDate.setHours($scope.sometime.getHours() + 1);
-	    newDate.setMinutes($scope.sometime.getMinutes());
-	    console.log("before assign", newDate);
-	    $scope.sometime = newDate;	
+            $scope.sometime.setHours($scope.sometime.getHours() + 1);
+	    $scope.sometime = angular.copy($scope.sometime);	
+	};
+
+        $scope.increaseOneMinute = function() {
+            $scope.sometime.setMinutes($scope.sometime.getMinutes() + 1);
+	    $scope.sometime = angular.copy($scope.sometime);	
+	};
+
+
+        $scope.decreaseOneHour = function() {
+            $scope.sometime.setHours($scope.sometime.getHours() - 1);
+	    $scope.sometime = angular.copy($scope.sometime);	
+	};
+
+        $scope.decreaseOneMinute = function() {
+            $scope.sometime.setMinutes($scope.sometime.getMinutes() - 1);
+	    $scope.sometime = angular.copy($scope.sometime);	
 	};
 
     

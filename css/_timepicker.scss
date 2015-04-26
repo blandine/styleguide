@@ -5,10 +5,19 @@
 //
 //Markup:
 //<div class="timepicker-wrapper">
-//<wfm-timepicker ng-model="sometime" layout="row" use-meridian="true">
+//<wfm-timepicker ng-model="sometime" layout="row" use-meridian="useMeridian">
 //</wfm-timepicker>
 //<input type="text" ng-model="formattedSometime" placeholder="formatted time"  />
-//<button ng-click="increaseOneHour()">Increase one hour</button>
+//<input type="time" ng-model="sometime" disabled/>
+//<div>
+//  <button ng-click="increaseOneHour()">Increase one hour</button>
+//  <button ng-click="increaseOneMinute()">Increase one minute</button>
+//</div>
+//<div>
+//  <button ng-click="decreaseOneHour()">Decrease one hour</button>
+//  <button ng-click="decreaseOneMinute()">Decrease one minute</button>
+//  <button ng-click=" useMeridian = !useMeridian">Toggle meridian</button>
+//</div>
 //</div>
 //
 //Styleguide 2.3
@@ -22,9 +31,21 @@
   select {
     padding-top: 0px !important;
     padding-bottom: 0px !important;
+    margin-left: 3px;
+    border-radius: 0px !important;
+    background-color: white;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
   }
   input {
     padding-left: 5px;
+
+    &.ng-dirty.ng-invalid {
+      border-color: red;
+    }
+    &.ng-pristine.ng-invalid {
+      border-color: pink;
+    }
   }
 }
 
