@@ -10,45 +10,47 @@ function timepickerDirective() {
 	restrict: 'E',
 	require: ["wfmTimepicker", "ngModel"],
         template: timepickerTemplate,
-	controller: ["$scope", "$element", "$attrs", "$filter", timepickerCtrl],
+        scope: {
+            'useMeridian' : '=?',
+            'hourStep' : '@?',
+            'minuteStep' : '@?'
+        },
+	controller: ["$scope", "$element", "$attrs", "$filter", "$log", timepickerCtrl],        
 	link: postLink
     };
 
-    function timepickerCtrl($scope, $element, $attrs, $filter) {
+    function timepickerCtrl($scope, $element, $attrs, $filter, $log) {
 	var self = this;
 
-        self.options = {
-            useMeridian: false,
-            hourStep: 1,
-            minuteStep: 15
-        };
-
-        self.updateRange = function(timeValue) {
-            var minHour = self.options.useMeridian? 1 : 0;
-            var maxHour = self.options.useMeridian? 12: 23;
+        self.updateRange = function(useMeridian, hourStep, minuteStep) {                        
+            var minHour = useMeridian? 1 : 0;
+            var maxHour = useMeridian? 12: 23;
             var minMinute = 0;
             var maxMinute = 59;
+
+            hourStep = hourStep? parseInt(hourStep): 1;
+            minuteStep = minuteStep? parseInt(minuteStep): 15;
             
             self.range = {
-                hour: {min: minHour, max: maxHour, step: self.options.hourStep},
-                minute: {min: minMinute, max: maxMinute, step: self.options.minuteStep}
+                hour: {min: minHour, max: maxHour, step: hourStep},
+                minute: {min: minMinute, max: maxMinute, step: minuteStep}
             };
         };
+        self.updateRange();
         
-        self.readTime = function(timeValue) {
+        
+        self.readTime = function(timeValue, useMeridian) {
             if (!timeValue) return null;
-            var timeText = $filter('date')(timeValue,  self.options.useMeridian?'h:m:a':'H:m' );
-            console.log("readTime 1", timeText);
+            var timeText = $filter('date')(timeValue, useMeridian?'h:m:a':'H:m' );
             var pieces = timeText.split(':');
             
             var timeModel = {
                 hour: parseInt(pieces[0]),
                 minute: parseInt(pieces[1])                  
             };
-            if (self.options.useMeridian) {
+            if (useMeridian) {
                 timeModel.meridian = (pieces[2] == 'AM')? 0 : 1;
             }
-            console.log("readTime 2", timeModel);
             return timeModel;
         };
 	
@@ -82,7 +84,11 @@ function timepickerDirective() {
 		ngModel.$render();
 	    }	    
 	};
-	
+
+        self.logTimeValue = function(timeValue) {
+            $log.log( $filter('date')(timeValue, 'HH:mm') );
+        };
+        
 	function increment(value, range) {
 	    if (value == null) return range.min;
             var overflow = value + range.step - range.max;
@@ -100,38 +106,29 @@ function timepickerDirective() {
     function postLink(scope, elem, attrs, ctrls) {
 	var timepicker = ctrls[0];
 	var ngModel = ctrls[1];
-
+        var debug =  angular.isDefined(attrs['debug']);
+        
         elem.attr('layout', 'row');        
-        scope.useMeridian = timepicker.options.useMeridian;	
         scope.timeValue = {hour: null, minute: null, meridian: null};
-
-        angular.isDefined(attrs['useMeridian']) && scope.$watch(function() {
-            return scope.$eval(attrs['useMeridian']);
-        }, function(newValue) {
-            timepicker.options.useMeridian = (newValue != null)? newValue : false;
+                
+        scope.$watch('useMeridian', function(newValue, oldValue) {
+            timepicker.updateRange(newValue, scope.hourStep, scope.minuteStep);
             if (ngModel.$modelValue) {
-                setViewValue(timepicker.readTime(ngModel.$modelValue));               
+                setViewValue(timepicker.readTime(ngModel.$modelValue, newValue));
             } 
             ngModel.$render();
         });
 
-        angular.isDefined(attrs['hourStep']) && attrs.$observe('hourStep', function(newValue) {
-            timepicker.range.hour.step = (newValue != null)? newValue : 1;
+        scope.$watch('hourStep', function(newValue) {
+            timepicker.updateRange(scope.useMeridian, newValue, scope.minuteStep);
         });
 
-        angular.isDefined(attrs['minuteStep']) && attrs.$observe('minuteStep', function(newValue) {
-            timepicker.range.minute.step = (newValue != null)? newValue : 15;
-        });        
-
-        scope.$watch(function() {
-            return timepicker.options;
-        }, function(newValue) {
-            timepicker.updateRange(scope.timeValue);
-            scope.useMeridian = timepicker.options.useMeridian;
-        }, true);
+        scope.$watch('minuteStep', function(newValue) {
+            timepicker.updateRange(scope.useMeridian, scope.hourStep, newValue);
+        });     
         
 	scope.$watch('timeValue', setViewValue, true);
-                
+                      
 	ngModel.$formatters.push(formatter);
 	ngModel.$parsers.push(parser);
 	ngModel.$render = renderer;
@@ -169,16 +166,19 @@ function timepickerDirective() {
                 if (viewValue.hour == 12) {
                     meridianAdjustment -= 12;
                 }
-	    }
-            
+	    }            
 	    date.setHours(viewValue.hour + meridianAdjustment  );
 	    date.setMinutes(viewValue.minute);
+
+            if (debug) {
+                timepicker.logTimeValue(date);
+            }
+            
 	    return date;
 	}
 	
-	function formatter(modelValue ) {
-            console.log("formatter", modelValue);
-            return timepicker.readTime(modelValue);
+	function formatter(modelValue ) {           
+            return timepicker.readTime(modelValue, scope.useMeridian);
 	}	
     }    
 }

@@ -3,30 +3,40 @@
 //The timepicker is based on bootstraps timepicker and all we do is wrap it and apply
 //some special classes to make it more compatible with material design.
 //
+//Options to configure the time-picker  
+//- use-meridian : use 12-hour format or 24-hour format
+//- hour-step: hour-change per keypress of up/down arrow key or mousewheel scroll
+//- minute-step: minute-change per keypress of up/down arrow key or mousewheel scroll
+//
+//In the demo, the timepicker is bound to the scope variable, with the following initialization at the page-load:
+//<pre>
+//  scope.sometime = new Date();
+//  scope.useMeridian = false;
+// </pre>
+//you can also use the following controls to manipulate the underlying time.
+//<div layout="row" layout-margin>
+//  <button class="btn" ng-click="increaseOneHour()" flex>Add 1 hour</button>
+//  <button class="btn" ng-click="decreaseOneHour()" flex>Minus 1 hour</button>
+//  <button class="btn" ng-click="increase15Minute()" flex>Add 15 minute</button>
+//  <button class="btn" ng-click="decrease15Minute()" flex>Minus 15 minute</button>
+//  <button class="btn" ng-click=" useMeridian = !useMeridian" flex>Toggle meridian</button>
+//</div>
+//<p></p>
+//
 //Markup:
-//<div class="timepicker-wrapper">
-//<wfm-timepicker ng-model="sometime" layout="row" use-meridian="useMeridian">
-//</wfm-timepicker>
-//<input type="text" ng-model="formattedSometime" placeholder="formatted time"  />
-//<input type="time" ng-model="sometime" disabled/>
-//<div>
-//  <button ng-click="increaseOneHour()">Increase one hour</button>
-//  <button ng-click="increaseOneMinute()">Increase one minute</button>
+//<div class="wfm-timepicker-wrapper">
+//  <wfm-timepicker ng-model="sometime" use-meridian="useMeridian" minute-step="15"></wfm-timepicker>
 //</div>
-//<div>
-//  <button ng-click="decreaseOneHour()">Decrease one hour</button>
-//  <button ng-click="decreaseOneMinute()">Decrease one minute</button>
-//  <button ng-click=" useMeridian = !useMeridian">Toggle meridian</button>
-//</div>
-//</div>
+//
+//
 //
 //Styleguide 2.3
 //
 
 
 
-.timepicker-wrapper {
-  width: 200px;
+.wfm-timepicker-wrapper {
+  width: 150px;
   
   select {
     padding-top: 0px !important;
