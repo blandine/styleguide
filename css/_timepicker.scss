@@ -7,11 +7,14 @@
 //- use-meridian : use 12-hour format or 24-hour format
 //- hour-step: hour-change per keypress of up/down arrow key or mousewheel scroll
 //- minute-step: minute-change per keypress of up/down arrow key or mousewheel scroll
+//- max-time: max time to be considered valid
+//- min-time: min time to be considered valid
 //
 //In the demo, the timepicker is bound to the scope variable, with the following initialization at the page-load:
 //<pre>
 //  scope.sometime = new Date();
 //  scope.useMeridian = false;
+//  scope.minTime = new Date();
 // </pre>
 //you can also use the following controls to manipulate the underlying time.
 //<div layout="row" layout-margin>
@@ -25,7 +28,7 @@
 //
 //Markup:
 //<div class="wfm-timepicker-wrapper">
-//  <wfm-timepicker ng-model="sometime" use-meridian="useMeridian" minute-step="15"></wfm-timepicker>
+//  <wfm-timepicker ng-model="sometime" use-meridian="useMeridian" minute-step="15" min-time="minTime"></wfm-timepicker>
 //</div>
 //
 //

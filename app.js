@@ -58,6 +58,7 @@ var app = angular.module('styleguideApp', ['ngMaterial', 'ui.grid', 'ui.grid.aut
 	    $scope.sometime = angular.copy($scope.sometime);	
 	};
 
+	$scope.minTime = new Date();
     
 
 });

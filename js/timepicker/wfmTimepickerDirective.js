@@ -13,7 +13,9 @@ function timepickerDirective() {
         scope: {
             'useMeridian' : '=?',
             'hourStep' : '@?',
-            'minuteStep' : '@?'
+            'minuteStep' : '@?',
+	    'maxTime': '=?',
+	    'minTime': '=?'
         },
 	controller: ["$scope", "$element", "$attrs", "$filter", "$log", timepickerCtrl],        
 	link: postLink
@@ -41,7 +43,7 @@ function timepickerDirective() {
         
         self.readTime = function(timeValue, useMeridian) {
             if (!timeValue) return null;
-            var timeText = $filter('date')(timeValue, useMeridian?'h:m:a':'H:m' );
+            var timeText = self.getTimeText(timeValue, useMeridian);
             var pieces = timeText.split(':');
             
             var timeModel = {
@@ -83,6 +85,11 @@ function timepickerDirective() {
 		ngModel.$setViewValue(action(ngModel.$modelValue, ceiling));
 		ngModel.$render();
 	    }	    
+	};
+
+	self.getTimeText = function(timeValue, useMeridian) {
+	    if (!timeValue) return null;
+            return $filter('date')(timeValue, useMeridian?'h:m:a':'H:m' );
 	};
 
         self.logTimeValue = function(timeValue) {
@@ -128,7 +135,25 @@ function timepickerDirective() {
         });     
         
 	scope.$watch('timeValue', setViewValue, true);
-                      
+	scope.$watch(function() {
+	    console.log("watcher", ngModel.$dirty, ngModel.$invalid);
+	    return ngModel.$dirty && ngModel.$invalid;
+	}, function(newValue) {
+	    if (newValue) {
+		var errMsg;
+		if (angular.isDefined(ngModel.$error["minTime"])) {
+		    errMsg = "Min-time: " + timepicker.getTimeText(scope.minTime);
+		    scope.$broadcast('timepicker.notification.invalid', errMsg);
+		}
+
+		if (angular.isDefined(ngModel.$error['maxTime'])) {
+		    errMsg = "Max-time: " + timepicker.getTimeText(scope.maxTime);
+		    scope.$broadcast('timepicker.notification.invalid', errMsg);
+		}
+		console.log(ngModel.$error);
+	    }	    
+	});
+	
 	ngModel.$formatters.push(formatter);
 	ngModel.$parsers.push(parser);
 	ngModel.$render = renderer;
@@ -136,17 +161,27 @@ function timepickerDirective() {
 	ngModel.$validators.setHourAndMinute = function(modelValue, viewValue) {
 	    if (modelValue == null && viewValue == null) return true;
 	    if (viewValue.hour != null && viewValue.minute != null) {
-		if (scope.useMeridian) {
-		    return viewValue.meridian != null;
-		} else {
-		    return true;
-		}
-		
+		return ! scope.useMeridian || viewValue.meridian != null;
 	    } else {
 		return false;
 	    }
 	};	
-                
+
+	ngModel.$validators.minTime = function(modelValue, viewValue) {
+	    if (modelValue == null) return true;	    
+	    return isNaN(scope.minTime) ||
+		new Date(modelValue.getTime()).setFullYear(1970, 0, 1) >=
+		new Date(scope.minTime.getTime()).setFullYear(1970, 0, 1);	    
+	};
+
+	ngModel.$validators.maxTime = function(modelValue, viewValue) {
+	    if (modelValue == null) return true;	    
+	    return isNaN(scope.maxTime) ||
+		new Date(modelValue.getTime()).setFullYear(1970, 0, 1) <=
+		new Date(scope.maxTime.getTime()).setFullYear(1970, 0, 1);	    
+	};
+
+	
 	function setViewValue(newValue, oldValue) {
 	    ngModel.$setViewValue(angular.copy(newValue));
 	};
@@ -198,6 +233,11 @@ function hourInputDirective() {
 	elem.attr('placeholder', wfmTimepicker.showMeridian? 'hh' : 'HH');
 	elem.bind('focus', onFocus);
 	elem.bind('blur', onBlur);
+
+
+	scope.$on('timepicker.notification.invalid', function() {
+	    ngModel.$setValidity('range', false);
+	});
 	
 	ngModel.$validators.number = function(modelValue, viewValue) {
 	    if (viewValue != null && (angular.isString(viewValue) && viewValue)) {
@@ -258,6 +298,11 @@ function minuteInputDirective() {
 	elem.attr('placeholder', 'mm');
 	elem.bind('focus', onFocus);
 	elem.bind('blur', onBlur);
+	
+	scope.$on('timepicker.notification.invalid', function() {
+	    ngModel.$setValidity('range', false);
+	});
+
 	
 	ngModel.$validators.number = function(modelValue, viewValue) {
 	    if (viewValue != null && (angular.isString(viewValue) && viewValue)) {
