@@ -1,0 +1,49 @@
+// Timepicker
+//
+//Markup: timepicker.hbs
+//
+//Styleguide 2.3
+
+$card-base-width: 100px;
+$card-base-height: 20px;
+  
+.wfm-timepicker-container {
+
+  position: relative;
+  width: $
+  height: 20px;
+  
+  .card-card-array {
+    position: absolute;
+    width: 100%;
+    height: 100%;        
+  }
+
+  .card {
+    position: absolute;
+    width: 60px;
+    .card-array-center {
+      left: 20px
+    }
+        
+    .card-array-left-1 {
+      left: -40px;
+    }
+
+    .card-array-left-2 {
+      left: -100px;
+    }
+
+    .card-array-right-1 {
+      left: 80px;
+    }
+
+    .card-array-right-2 {
+      left: 140px;
+    }
+
+    .card-  
+      
+  }
+      
+}
