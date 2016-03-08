@@ -70,9 +70,9 @@
         },
         sasslint: {
                   options: {
-                      configFile: 'config/.sass-lint.yml',
+                      configFile: '.sass-lint.yml',
                   },
-                  target: ['css/*.scss']
+                  target: ['css/_accordion.scss']
               },
         uglify: {
                   'dist/wfmdirectives.min.js': ['directives/**/*.js', '!directives/**/*.spec.js']
