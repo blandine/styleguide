@@ -72,7 +72,7 @@
                   options: {
                       configFile: 'config/.sass-lint.yml',
                   },
-                  target: ['location/*.scss']
+                  target: ['css/*.scss']
               },
         uglify: {
                   'dist/wfmdirectives.min.js': ['directives/**/*.js', '!directives/**/*.spec.js']
@@ -80,6 +80,7 @@
     });
 
      grunt.loadNpmTasks('grunt-sass');
+     grunt.loadNpmTasks('grunt-sass-lint');
      grunt.loadNpmTasks('grunt-contrib-watch');
      grunt.loadNpmTasks('grunt-shell');
      grunt.loadNpmTasks('grunt-contrib-cssmin');
