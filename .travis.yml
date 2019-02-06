@@ -1,14 +1,39 @@
 language: node_js
+dist: trusty
+sudo: false
 node_js:
-  - 0.10.36
+    - 'lts/*' #latest lts
+addons:
+    apt:
+        sources:
+            - ubuntu-toolchain-r-test
+        packages:
+            - gcc-4.8
+            - g++-4.8
 before_install:
-  - npm install -g grunt-cli
-  - npm install -g kss
-install: npm install
-before_script: grunt dist
-script: 
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then bash ./deploy-ghpages.sh; fi
-env:
-  global:
-    - GH_REF: github.com/Teleopti/styleguide.git
-    - secure: d9ejf1F4Q+kIhKVfaReYlW3itLeMmQzcuJH4vM/LffzJb/PusyI+mMBmo4Bc4h3GmkJEjCb78nrxjzRFZeG3C7C4jOgg2NGGIwQzpHoKcziwmfpX8BgFTnBU6VlmLUBnNxOINppLV6glMR0kHK6o/KLrKC56xKzHX4/yYrXcPdQ=
+    # Use GCC 4.8 if it's available
+    - 'if [ ! `which gcc-4.8` == "" ]; then export CXX=g++-4.8 && export CC=gcc-4.8; fi'
+    - npm config set registry https://registry.npmjs.org/
+cache:
+    directories:
+        - node_modules # NPM packages
+        - $HOME/.npm # npm caches
+install:
+    - npm install --prefer-offline
+before_script: npm run dist -- --verbose
+script:
+    - ./node_modules/.bin/karma start --single-run --browsers PhantomJS
+deploy:
+    - provider: npm
+      username: 'teleopti_travis'
+      email: $email
+      api_key: $token
+      skip_cleanup: true
+      on:
+          tags: true
+    - provider: pages
+      local-dir: 'styleguide'
+      skip-cleanup: true
+      github-token: $GITHUB_TOKEN
+      on:
+          tags: true

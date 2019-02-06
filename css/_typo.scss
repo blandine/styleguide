@@ -1,27 +1,29 @@
-//Text 
+// Headers
 //
-//Styleguide 1.7
-//
-
-//Typography 
-//
-//Our standard font-family is  15px Calibri ('Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif). 
+//Our standard font-family is 14px Calibri ('Calibri,Segoe,Segoe UI,Arial,sans-serif). Avoid introducing other font types or sizes as this may lead to issues with layout or translation.
 //
 //Markup:
-//<p>Simple text</p>
-//<h1>Heading 1</h1>
-//<h2>Heading 2</h2>
-//<h3>Heading 3</h3>
-//<h4>Heading 4</h4>
+//<h1>View header</h1>
+//<h2>Panel header</h2>
+//<h3>Text header</h3>
+//<p>Plain text</p>
 //
-//Styleguide 1.7.1
+//Styleguide 1.18
 //
 
 //Language
 //
-//We would like to keep a common naming for normal actions throughout the application.
+//The way we adress the user must also be concistent. Feeling familiar can help the user make quicker actions, even in unfamiliar modules.
+//By keeping common terms we also save translation resources.
 //
-//Markup:
+//Styleguide 6
+//
+
+//How we use words
+//
+//These are some of the thinking applied to words and writing.
+//When in doubt, check the <a href="https://material.io/guidelines/style/writing.html">material design writing guidelines</a>
+//
 //<table class="wfm-table">
 //<thead><tr><th>Do</th><th>Don't</th><th>Distinction</th></tr></thead>
 //<tbody>
@@ -39,63 +41,113 @@
 // </tbody>
 //</table>
 //
-//Styleguide 1.7.2
+//Styleguide 6.1
 //
 
-h1,h2,h3,h4,h5,h6{
-	margin-top:10px!important;
-	margin-bottom:10px!important;
-}
-
-h1{
-	font-size: 36px;
-}
-
-h2{
-	font-size: 30px;
-}
- 
-h3{
-	font-size: 24px;
-}
-
-h4{ 
-	font-size: 18px;
-}
-
-h5{ 
-	font-size: 14px;
-}
-
-h6{
-	font-size: 12px;
-}
-
-// Helper classes for text
+//Translations
 //
-//Helper classes can be used if text needs to have a color association. Please remember that this can cause problems for people who are color-blind so use with care. 
+//To support all manner of languages we use <a href="https://github.com/angular-translate/angular-translate">angular-translate</a>.
+//It allows us to translate in templates using {&nbsp;{'Key'|translate}&nbsp;} or $translate.instant('Key') when translating from JavaScript.
+//Keys used in this styleguide should be referenced in the styleguide_translation_keys.html file in the project root.
+//The format of these are important for us to be able to keep track of what keys are in use.
+//
+// <b>Jalaali</b></br>
+// To show dates in the Jalaali format use this filter: {&nbsp;{DateObj | persianDate:'fullDate'}&nbsp;}.
+//
+//Styleguide 6.2
+//
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+
+h1 {
+    font-size: 18px;
+}
+
+h2 {
+    font-size: 16px;
+}
+
+h3 {
+    font-size: $standard-font-size;
+    font-weight: bold;
+}
+
+// Colors for text
+//
+//Helper classes can be used if text needs to have a color association. Remember that this can cause problems for people who are color-blind so use with care.
 //
 //Markup:
 //<p class="text-muted">Fusce dapibus, tellus ac cursus commodo</p>
 //<p class="text-success">Fusce dapibus, tellus ac cursus commodo</p>
 //<p class="text-warning">Fusce dapibus, tellus ac cursus commodo</p>
 //<p class="text-danger">Fusce dapibus, tellus ac cursus commodo</p>
+//<p class="text-white">Fusce dapibus, tellus ac cursus commodo</p>
 //
-//Styleguide 1.7.3
+//Styleguide 8.4
 //
 
 .text-muted {
-	color: $gray054;
+    color: $gray054;
 }
 
 .text-success {
-	color: $green-400;
+    color: $green-300;
 }
 
 .text-warning {
-	color: $orange-600;
+    color: $orange-600;
 }
 
 .text-danger {
-	color: $red-600;
+    color: $red-600;
+}
+
+.text-white {
+    color: $white;
+}
+
+// Other text helpers
+//
+//Markup:
+//<p class="caps">First letter is capitalized</p>
+//<p class="sm-font-size">small text</p>
+//<p class="full-padding">Padded</p>
+//<p class="padding-reset">remove padding</p>
+//<p class="unselectable">This text could not be selected</p>
+//
+//Styleguide 8.5
+//
+.sm-font-size {
+    font-size: $sm-font-size !important;
+}
+
+.full-padding {
+    padding: $full-padding;
+}
+
+.padding-reset {
+    padding: 0 !important;
+}
+
+.caps:first-letter {
+    text-transform: uppercase;
+}
+
+.unselectable {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
